@@ -1,5 +1,5 @@
 {
-  "name": "remeda",
+  "name": "ts-prime",
   "version": "0.0.20",
   "description": "A utility library for JavaScript and Typescript.",
   "main": "dist/commonjs/index.js",
@@ -36,7 +36,7 @@
     "programming",
     "typescript"
   ],
-  "author": "Łukasz Sentkiewicz",
+  "author": "Andrius Mozūraitis",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/remeda/remeda/issues"

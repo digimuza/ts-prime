@@ -55,7 +55,7 @@ const dataProvider = (
     case 'date':
       return new Date();
     case 'function':
-      return () => {};
+      return () => { };
     case 'null':
       return null;
     case 'promise':
@@ -77,6 +77,26 @@ describe('Describe guards behavior', () => {
       expect(typeof data).toEqual('string');
       assertType<string>(data);
     }
+
+  });
+
+  test('isString: should work even if data type is unknown', () => {
+    const data: unknown = dataProvider('string');
+    if (isString(data)) {
+      expect(typeof data).toEqual('string');
+      assertType<string>(data);
+    }
+  });
+
+  test('isString: should work with literal types', () => {
+    const data = (): "a" | "b" | "c" | number => {
+      return "a"
+    }
+    const x = data()
+    if (isString(x)) {
+      expect(typeof x).toEqual('string');
+      assertType<"a" | "b" | "c">(x);
+    }
   });
   test('isString: should work as type guard in array', () => {
     const data = [
@@ -95,6 +115,18 @@ describe('Describe guards behavior', () => {
     if (isBoolean(data)) {
       expect(typeof data).toEqual('boolean');
       assertType<boolean>(data);
+    }
+
+    const data1: unknown = dataProvider('boolean');
+    if (isBoolean(data1)) {
+      expect(typeof data1).toEqual('boolean');
+      assertType<boolean>(data1);
+    }
+
+    const data2: any = dataProvider('boolean');
+    if (isBoolean(data2)) {
+      expect(typeof data2).toEqual('boolean');
+      assertType<boolean>(data2);
     }
   });
   test('isBoolean: should work as type guard in filter', () => {
@@ -115,6 +147,12 @@ describe('Describe guards behavior', () => {
       expect(Array.isArray(data)).toEqual(true);
       assertType<number[]>(data);
     }
+
+    const data1: unknown = dataProvider('array');
+    if (isArray(data1)) {
+      expect(Array.isArray(data1)).toEqual(true);
+      assertType<readonly unknown[]>(data1)
+    }
   });
   test('isArray: should work as type guard in filter', () => {
     const data = [
@@ -130,9 +168,15 @@ describe('Describe guards behavior', () => {
   });
   test('isDate: should work as type guard', () => {
     const data = dataProvider('date');
+    const data1: unknown = dataProvider('date');
     if (isDate(data)) {
       expect(data instanceof Date).toEqual(true);
       assertType<Date>(data);
+    }
+
+    if (isDate(data1)) {
+      expect(data1 instanceof Date).toEqual(true);
+      assertType<Date>(data1);
     }
   });
   test('isDate: should work as type guard in filter', () => {
@@ -179,8 +223,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-            a: string;
-          }
+          a: string;
+        }
         | (() => void)
         | number[]
         | Date
@@ -270,7 +314,9 @@ describe('Describe guards behavior', () => {
     const data = dataProvider('object');
     if (isObject(data)) {
       expect(typeof data).toEqual('object');
-      assertType<{ a: string }>(data);
+      assertType<{
+        a: string;
+      } | Date | Error | Promise<number>>(data);
     }
   });
   test('isObject: should work as type guard in filter', () => {
@@ -284,7 +330,10 @@ describe('Describe guards behavior', () => {
     expect(data.every(c => typeof c === 'object' && !Array.isArray(c))).toEqual(
       true
     );
-    assertType<{ a: string }[]>(data);
+
+    assertType<({
+      a: string;
+    } | Date | Error | Promise<number>)[]>(data);
   });
 
   test('isPromise: should work as type guard', () => {
@@ -319,8 +368,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-            a: string;
-          }
+          a: string;
+        }
         | (() => void)
         | number[]
         | Date
