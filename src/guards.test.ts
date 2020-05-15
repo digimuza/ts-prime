@@ -79,7 +79,6 @@ describe('Describe guards behavior', () => {
     }
 
   });
-
   test('isString: should work even if data type is unknown', () => {
     const data: unknown = dataProvider('string');
     if (isString(data)) {
