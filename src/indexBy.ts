@@ -34,7 +34,7 @@ export function indexBy<T>(
  * @category Array
  */
 export function indexBy<T>(
-  fn: (item: T) => any
+  fn: (item: T) => string | number
 ): (array: readonly T[]) => Record<string, T>;
 
 export function indexBy() {
@@ -43,7 +43,7 @@ export function indexBy() {
 
 const _indexBy = (indexed: boolean) => <T>(
   array: T[],
-  fn: PredIndexedOptional<T, any>
+  fn: PredIndexedOptional<T, string | number>
 ) => {
   return array.reduce((ret, item, index) => {
     const value = indexed ? fn(item, index, array) : fn(item);

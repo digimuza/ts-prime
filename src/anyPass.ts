@@ -42,6 +42,6 @@ export function anyPass() {
   return purry(_anyPass, arguments);
 }
 
-function _anyPass(data: any, fns: Array<(data: any) => boolean>) {
+function _anyPass(data: any, fns: ReadonlyArray<(data: any) => boolean>) {
   return fns.some(fn => fn(data));
 }

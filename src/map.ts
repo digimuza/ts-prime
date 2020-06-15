@@ -42,7 +42,7 @@ export function map() {
 }
 
 const _map = (indexed: boolean) => <T, K>(
-  array: T[],
+  array: readonly T[],
   fn: PredIndexedOptional<T, K>
 ) => {
   return _reduceLazy(
@@ -53,7 +53,7 @@ const _map = (indexed: boolean) => <T, K>(
 };
 
 const _lazy = (indexed: boolean) => <T, K>(fn: PredIndexedOptional<T, K>) => {
-  return (value: T, index?: number, array?: T[]): LazyResult<K> => {
+  return (value: T, index?: number, array?: readonly T[]): LazyResult<K> => {
     return {
       done: false,
       hasNext: true,
