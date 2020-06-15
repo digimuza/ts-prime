@@ -1,10 +1,8 @@
-export * from './addProp';
 export * from './allPass';
 export * from './anyPass';
 export * from './chunk';
 export * from './clamp';
 export * from './clone';
-export * from './compact';
 export * from './concat';
 export * from './createPipe';
 export * from './difference';
@@ -55,3 +53,6 @@ export * from './toPairs';
 export * from './type';
 export * from './uniq';
 export * from './uniqBy';
+export * from './deepMege'
+export * from './guards'
+export * from './ensureArray'

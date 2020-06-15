@@ -56,7 +56,7 @@ const _filter = (indexed: boolean) => <T>(
 const _lazy = (indexed: boolean) => <T>(
   fn: PredIndexedOptional<T, boolean>
 ) => {
-  return (value: T, index?: number, array?: T[]): LazyResult<T> => {
+  return (value: T, index?: number, array?: readonly T[]): LazyResult<T> => {
     const valid = indexed ? fn(value, index, array) : fn(value);
     if (!!valid === true) {
       return {
@@ -75,7 +75,7 @@ const _lazy = (indexed: boolean) => <T>(
 export namespace filter {
   export function indexed<T, S extends T>(
     array: readonly T[],
-    fn: (input: T, index: number, array: T[]) => input is S
+    fn: (input: T, index: number, array: readonly T[]) => input is S
   ): S[];
   export function indexed<T>(
     array: readonly T[],
@@ -85,7 +85,7 @@ export namespace filter {
    * @data_last
    */
   export function indexed<T, S extends T>(
-    fn: (input: T, index: number, array: T[]) => input is S
+    fn: (input: T, index: number, array: readonly T[]) => input is S
   ): (array: readonly T[]) => S[];
   export function indexed<T>(
     fn: PredIndexed<T, boolean>

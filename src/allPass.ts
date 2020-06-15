@@ -42,6 +42,6 @@ export function allPass() {
   return purry(_allPass, arguments);
 }
 
-function _allPass(data: any, fns: Array<(data: any) => boolean>) {
+function _allPass(data: any, fns: ReadonlyArray<(data: any) => boolean>) {
   return fns.every(fn => fn(data));
 }

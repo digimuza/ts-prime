@@ -33,7 +33,7 @@ export function difference<T>(array: readonly T[], other: readonly T[]): T[];
  */
 export function difference<T, K>(
   other: readonly T[]
-): (array: readonly K[]) => T[];
+): (array: readonly K[]) => readonly T[];
 
 export function difference() {
   return purry(_difference, arguments, difference.lazy);
@@ -45,7 +45,7 @@ function _difference<T>(array: T[], other: T[]) {
 }
 
 export namespace difference {
-  export function lazy<T>(other: T[]) {
+  export function lazy<T>(other: readonly T[]) {
     return (value: T): LazyResult<T> => {
       const set = new Set(other);
       if (!set.has(value)) {

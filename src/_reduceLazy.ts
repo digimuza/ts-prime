@@ -22,8 +22,8 @@ interface LazyMany<T> {
 }
 
 export function _reduceLazy<T, K>(
-  array: T[],
-  lazy: (item: T, index?: number, array?: T[]) => LazyResult<K>,
+  array: readonly T[],
+  lazy: (item: T, index?: number, array?: readonly T[]) => LazyResult<K>,
   indexed?: boolean
 ) {
   return array.reduce((acc: K[], item, index) => {
