@@ -56,3 +56,4 @@ export * from './uniqBy';
 export * from './deepMege'
 export * from './guards'
 export * from './ensureArray'
+export * from './ensureType'
