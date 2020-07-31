@@ -31,7 +31,7 @@ export * from './noop';
 export * from './objOf';
 export * from './omit';
 export * from './once';
-export * from './pathOr';
+export * from './path';
 export * from './pick';
 export * from './pipe';
 export * from './prop';
