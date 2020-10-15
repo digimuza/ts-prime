@@ -1,7 +1,6 @@
 import { pipe } from './pipe';
 import { map } from './map';
 import { take } from './take';
-import { prop } from './prop';
 import { filter } from './filter';
 import { identity } from './identity';
 
@@ -47,21 +46,6 @@ describe('lazy', () => {
     );
     expect(count).toHaveBeenCalledTimes(3);
     expect(result).toEqual([10, 30]);
-  });
-
-  it('lazy after 1st op', () => {
-    const count = jest.fn();
-    const result = pipe(
-      { inner: [1, 2, 3] },
-      prop('inner'),
-      map(x => {
-        count();
-        return x * 10;
-      }),
-      take(2)
-    );
-    expect(count).toHaveBeenCalledTimes(2);
-    expect(result).toEqual([10, 20]);
   });
 
   it('break lazy', () => {

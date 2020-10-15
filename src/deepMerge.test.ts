@@ -1,4 +1,4 @@
-import { deepMergeLeft, deepMergeRight } from './deepMege';
+import { deepMergeLeft, deepMergeRight } from './deepMerge';
 
 describe('mergeDeepLeft and mergeRight tests', () => {
     test('basic', () => {

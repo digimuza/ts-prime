@@ -1,4 +1,4 @@
-Remeda
+TS-Prime
 =============
 
 The first "data-first" and "data-last" utility library designed especially for TypeScript.

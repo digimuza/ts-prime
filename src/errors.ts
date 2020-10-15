@@ -8,6 +8,14 @@ export class UnknownError extends Error {
     }
 }
 
+
+export function assertError<T>(data: T | Error): T {
+    if (isError(data)) {
+        throw data
+    }
+    return data as T
+}
+
 /**
  * Ensures that err is Error instance
  */

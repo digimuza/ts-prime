@@ -1,3 +1,6 @@
+import { clone } from './clone';
+import { isArray, isObject } from './guards';
+import { pipe } from './pipe';
 import { purry } from './purry';
 import { type } from './type';
 
@@ -36,25 +39,18 @@ export function sortBy<T>(array: readonly T[], fn: (item: T) => SortByProp): T[]
  * @data_last
  * @category Array
  */
-export function sortBy<T>(fn: (item: T) => any): (array: readonly T[]) => T[];
+export function sortBy<T>(fn: (item: T) => SortByProp): (array: readonly T[]) => T[];
 
 export function sortBy() {
   return purry(_sortBy, arguments);
 }
 
-// TODO this helpful function will be moved somewhere
-function isObject<T>(data: T): data is Extract<T, { [k: string]: unknown }> {
-  return typeof data === 'object' && !Array.isArray(data)
-}
 
-// TODO this helpful function will be moved somewhere
-function isArray<T>(data: T): data is Extract<T, Array<any>> {
-  return Array.isArray(data)
-}
+
 
 function _sortBy<T>(array: T[], fn: (item: T) => SortByProp): T[] {
-  const copied = [...array];
-  return copied.sort((a, b) => {
+  const copied = clone(array);
+  const sortedArray = copied.sort((a, b) => {
     const aa = fn(a);
     const bb = fn(b);
     type SortFunction = (a: SortValue, b: SortValue) => number
@@ -75,7 +71,7 @@ function _sortBy<T>(array: T[], fn: (item: T) => SortByProp): T[] {
           }
       }
     }
-    
+
     const sortComplex = (aC: Exclude<SortByProp, Array<any>>, bC: Exclude<SortByProp, Array<any>>) => {
       if (type(aC) !== type(bC)) {
         throw new Error("Can't compare two different types")
@@ -127,5 +123,14 @@ function _sortBy<T>(array: T[], fn: (item: T) => SortByProp): T[] {
     }
 
     return sortComplex(aa as Exclude<SortByProp, Array<any>>, bb as Exclude<SortByProp, Array<any>>)
-  });
+  })
+
+  return sortedArray;
 }
+
+const l = [{
+  a: 4,
+  x: 74
+}]
+
+pipe(l, sortBy((a) => a.a))
