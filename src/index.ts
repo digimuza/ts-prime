@@ -9,6 +9,8 @@ export * from './difference';
 export * from './drop';
 export * from './dropLast';
 export * from './equals';
+export * from './mapToObj'
+export * from './flatMapToObj'
 export * from './filter';
 export * from './find';
 export * from './findIndex';

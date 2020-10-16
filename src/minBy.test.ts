@@ -9,7 +9,6 @@ test('minBy', () => {
 
 })
 
-
 test('maxBy', () => {
     expect(
         maxBy([{ a: 1 }, { a: 2 }], (q) => q.a)

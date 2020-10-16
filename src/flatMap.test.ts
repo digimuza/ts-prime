@@ -27,7 +27,6 @@ describe('data_last', () => {
         counter2.fn(),
         find(x => x === 22)
       );
-      expect(counter1.count).toHaveBeenCalledTimes(2);
       expect(counter2.count).toHaveBeenCalledTimes(7);
       expect(result).toEqual(22);
     });

@@ -35,30 +35,9 @@ export function flatMap<T, K>(
 ): (array: readonly T[]) => readonly K[];
 
 export function flatMap() {
-  return purry(_flatMap, arguments, flatMap.lazy);
+  return purry(_flatMap, arguments);
 }
 
-function _flatMap<T, K>(array: readonly T[], fn: (input: T) => K[]): readonly K[] {
-  return flatten(array.map(item => fn(item)));
-}
-
-export namespace flatMap {
-  export function lazy<T, K>(fn: (input: T) => K | readonly K[]) {
-    return (value: T) => {
-      const next = fn(value);
-      if (Array.isArray(next)) {
-        return {
-          done: false,
-          hasNext: true,
-          hasMany: true,
-          next: next,
-        };
-      }
-      return {
-        done: false,
-        hasNext: true,
-        next,
-      };
-    };
-  }
+function _flatMap<T, K>(array: readonly T[], fn: (input: T, index: number, arr: readonly T[]) => K[]): readonly K[] {
+  return flatten(array.map((item, index, array) => fn(item, index, array)));
 }

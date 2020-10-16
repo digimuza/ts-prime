@@ -18,7 +18,7 @@ import { purry } from './purry';
  */
 export function mapToObj<T, K extends string | number | symbol, V>(
   array: readonly T[],
-  fn: (element: T) => [K, V]
+  fn: (element: T, index: number, array: readonly T[]) => [K, V]
 ): Record<K, V>;
 
 /**
@@ -42,33 +42,20 @@ export function mapToObj<T, K extends string | number | symbol, V>(
  * @category Array
  */
 export function mapToObj<T, K extends string | number | symbol, V>(
-  fn: (element: T) => [K, V]
+  fn: (element: T, index: number, array: readonly T[]) => [K, V]
 ): (array: readonly T[]) => Record<K, V>;
 
 export function mapToObj() {
-  return purry(_mapToObj(false), arguments);
+  return purry(_mapToObj(), arguments);
 }
 
-const _mapToObj = (indexed: boolean) => <T>(
+const _mapToObj = () => <T>(
   array: any[],
   fn: PredIndexedOptional<any, any>
 ) => {
   return array.reduce((result, element, index) => {
-    const [key, value] = indexed ? fn(element, index, array) : fn(element);
+    const [key, value] = fn(element, index, array);
     result[key] = value;
     return result;
   }, {});
 };
-
-export namespace mapToObj {
-  export function indexed<T, K extends string | number | symbol, V>(
-    array: readonly T[],
-    fn: (element: T, index: number, array: readonly T[]) => [K, V]
-  ): Record<K, V>;
-  export function indexed<T, K extends string | number | symbol, V>(
-    fn: (element: T, index: number, array: readonly T[]) => [K, V]
-  ): (array: readonly T[]) => Record<K, V>;
-  export function indexed() {
-    return purry(_mapToObj(true), arguments);
-  }
-}

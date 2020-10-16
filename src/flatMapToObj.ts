@@ -23,7 +23,7 @@ import { purry } from './purry';
  */
 export function flatMapToObj<T, K extends string | number | symbol, V>(
     array: readonly T[],
-    fn: (element: T) => [K, V][]
+    fn: (element: T, index: number, array: readonly T[]) => [K, V][]
 ): Record<K, V>;
 
 /**
@@ -50,36 +50,22 @@ export function flatMapToObj<T, K extends string | number | symbol, V>(
  * @category Array
  */
 export function flatMapToObj<T, K extends string | number | symbol, V>(
-    fn: (element: T) => [K, V][]
+    fn: (element: T, index: number, array: readonly T[]) => [K, V][]
 ): (array: readonly T[]) => Record<K, V>;
 
 export function flatMapToObj() {
-    return purry(_flatMapToObj(false), arguments);
+    return purry(_flatMapToObj(), arguments);
 }
 
-const _flatMapToObj = (indexed: boolean) => <T>(
+const _flatMapToObj = () => <T>(
     array: any[],
     fn: PredIndexedOptional<any, any>
 ) => {
     return array.reduce((result, element, index) => {
-        const items = indexed ? fn(element, index, array) : fn(element);
+        const items = fn(element, index, array);
         items.forEach(([key, value]: [any, any]) => {
             result[key] = value;
         });
         return result;
     }, {});
 };
-
-// tslint:disable-next-line: no-namespace
-export namespace flatMapToObj {
-    export function indexed<T, K extends string | number | symbol, V>(
-        array: readonly T[],
-        fn: (element: T, index: number, array: readonly T[]) => [K, V][]
-    ): Record<K, V>;
-    export function indexed<T, K extends string | number | symbol, V>(
-        fn: (element: T, index: number, array: readonly T[]) => [K, V][]
-    ): (array: readonly T[]) => Record<K, V>;
-    export function indexed() {
-        return purry(_flatMapToObj(true), arguments);
-    }
-}
