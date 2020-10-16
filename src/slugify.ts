@@ -1,5 +1,7 @@
+import { normalizeString } from './normalizeString'
 export function slugify(str: string) {
-    str = str.replace(/^\s+|\s+$/g, "");
+    const qw = str.split(" ").map((q) => normalizeString(q)).join("-")
+    str = qw.replace(/^\s+|\s+$/g, "");
 
     // Make the string lowercase
     str = str.toLowerCase();
@@ -21,5 +23,9 @@ export function slugify(str: string) {
         // Collapse dashes
         .replace(/-+/g, "-");
 
+
+    if (str[str.length - 1] === '-') {
+        return str.slice(0, str.length - 1)
+     }
     return str;
 }

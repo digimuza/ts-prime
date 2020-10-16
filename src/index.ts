@@ -15,6 +15,8 @@ export * from './filter';
 export * from './find';
 export * from './findIndex';
 export * from './first';
+export * from './stats';
+export * from './normalizeString';
 export * from './flatMap';
 export * from './flatten';
 export * from './flattenDeep';
@@ -22,6 +24,7 @@ export * from './forEach';
 export * from './forEachObj';
 export * from './groupBy';
 export * from './identity';
+export * from './slugify';
 export * from './indexBy';
 export * from './intersection';
 export * from './last';
@@ -63,3 +66,5 @@ export * from './mapRecord'
 export * from './filterRecord'
 export * from './flatMapRecord'
 export * from './minBy'
+export * from './capitalize'
+export * from './convertStringToNameCase'
