@@ -18,8 +18,8 @@ export function filterRecord<T extends Record<string, unknown>>(record: T, fn: P
 
 /**
  * Loops each record element and match against provided predicate.
- * @param record The object to filter.
- * @param fn Predicate function.
+ * @param record - The object to filter.
+ * @param fn - Predicate function.
  * @returns The new filtered record.
  * @signature
  *    R.pipe({ a: 1, b: 2, c: 3 }, R.filterRecord(fn))

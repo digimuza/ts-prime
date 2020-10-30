@@ -6,12 +6,12 @@ import { normalizeString } from "./normalizeString"
 import { pipe } from "./pipe"
  /**
  * Convert any string to nameCased variant
- * @param str the string
+ * @param str - the string
  * @param to - convert string to 'PascalCase' | 'camelCase' | 'snake_case' | 'kebab-case' | 'Train-Case'
  * @signature
  *    R.convertStringToNameCase(str, to);
  * @example
- *    R.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'PascalCase') // => Super0BallCup
+ *    R.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'PascalCase') // -> Super0BallCup
  * @data_first
  * @category String
  */

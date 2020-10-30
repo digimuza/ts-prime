@@ -78,7 +78,8 @@ function recursiveMerge(a: unknown, b: unknown): unknown {
   }
 
   // If we here we know that a is primitive value if it's defined we chose a over b
-  if (isDefined(a)) {
+  // Unless this value is empty string
+  if (isDefined(a) && a !== '') {
     return a;
   }
 
@@ -93,7 +94,7 @@ function recursiveMerge(a: unknown, b: unknown): unknown {
  * Merging object from left to right
  *
  * @description
- * @param target value be preserved if possible.
+ * @param target - value be preserved if possible.
  * Consider following
  *
  * array + obj = array

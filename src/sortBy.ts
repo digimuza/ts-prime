@@ -11,8 +11,8 @@ export type SortByProp = SortValue | ComplexSort | (SortValue | ComplexSort)[]
 /**
  * Sorts the list according to the supplied function in ascending order.
  * Sorting is based on a native `sort` function. It's not guaranteed to be stable.
- * @param array the array to sort
- * @param fn the mapping function
+ * @param array - the array to sort
+ * @param fn - the mapping function
  * @signature
  *    R.sortBy(array, fn)
  * @example

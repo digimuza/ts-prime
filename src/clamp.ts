@@ -2,8 +2,8 @@ import { purry } from './purry';
 
 /**
  * Clamp the given value within the inclusive min and max bounds.
- * @param value the number
- * @param limits the bounds limits
+ * @param value - the number
+ * @param limits - the bounds limits
  * @signature
  *    R.clamp(value, { min, max });
  * @example

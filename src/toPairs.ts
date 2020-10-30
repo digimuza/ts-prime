@@ -1,6 +1,6 @@
 /**
  * Returns an array of key/values of the enumerable properties of an object.
- * @param object
+ * @param object - Any object
  * @signature
  *    R.toPairs(object)
  * @example

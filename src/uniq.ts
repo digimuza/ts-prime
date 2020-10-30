@@ -5,7 +5,7 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
  * Returns a new array containing only one copy of each element in the original list.
  * Elements are compared by reference using Set.
  * Note: In `pipe`, use `uniq()` form instead of `uniq`. Otherwise, the inferred type is lost.
- * @param array
+ * @param array - List of items
  * @signature
  *    R.uniq(array)
  * @example

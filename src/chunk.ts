@@ -2,8 +2,8 @@ import { purry } from './purry';
 
 /**
  * Split an array into groups the length of `size`. If `array` can't be split evenly, the final chunk will be the remaining elements.
- * @param array the array
- * @param size the length of the chunk
+ * @param array - the array
+ * @param size - the length of the chunk
  * @signature
  *    R.chunk(array, size)
  * @example

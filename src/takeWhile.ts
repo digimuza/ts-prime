@@ -18,7 +18,7 @@ export function takeWhile<T>(
 
 /**
  * Returns elements from the array until predicate returns false.
- * @param fn the predicate
+ * @param fn - the predicate
  * @signature
  *    R.takeWhile(fn)(array)
  * @example

@@ -3,8 +3,11 @@
  * Gives a single-word string description of the (native) type of a value, returning such answers as 'Object', 'Number', 'Array', or 'Null'. Does not attempt to distinguish user Object types any further, reporting them all as 'Object'.
  * @param val
  * @signature
+ * ```ts
  *    R.type(obj)
+ * ```
  * @example
+ * ```ts
  *    R.type({}); //=> "Object"
  *    R.type(1); //=> "Number"
  *    R.type(false); //=> "Boolean"
@@ -14,6 +17,7 @@
  *    R.type(/[A-z]/); //=> "RegExp"
  *    R.type(() => {}); //=> "Function"
  *    R.type(undefined); //=> "Undefined"
+ * ```
  * @category Type
  */
 export function type(val: any) {

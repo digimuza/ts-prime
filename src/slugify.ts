@@ -1,4 +1,15 @@
 import { normalizeString } from './normalizeString'
+
+/**
+ * Converts any string to slug
+ * @param str the string
+ * @signature
+ *    R.slugify(str);
+ * @example
+ *    R.slugify("Super ball cup") // => super-ball-cup
+ * @data_first
+ * @category String
+ */
 export function slugify(str: string) {
     const qw = str.split(" ").map((q) => normalizeString(q)).join("-")
     str = qw.replace(/^\s+|\s+$/g, "");

@@ -3,8 +3,8 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
 
 /**
  * Excludes the values from `other` array.
- * @param array the source array
- * @param other the values to exclude
+ * @param array - the source array
+ * @param other - the values to exclude
  * @signature
  *    R.difference(array, other)
  * @example

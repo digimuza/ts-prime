@@ -3,8 +3,8 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
 
 /**
  * Removes first `n` elements from the `array`.
- * @param array the target array
- * @param n the number of elements to skip
+ * @param array - the target array
+ * @param n - the number of elements to skip
  * @signature
  *    R.drop(array, n)
  * @example
@@ -17,8 +17,8 @@ export function drop<T>(array: readonly T[], n: number): T[];
 
 /**
  * Removes first `n` elements from the `array`.
- * @param array the target array
- * @param n the number of elements to skip
+ * @param array - the target array
+ * @param n - the number of elements to skip
  * @signature
  *    R.drop(n)(array)
  * @example

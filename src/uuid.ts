@@ -1,3 +1,7 @@
+/**
+ * @public
+ * Generates non cryptographic UUID
+ */
 export function uuidv4(): string {
     // https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
