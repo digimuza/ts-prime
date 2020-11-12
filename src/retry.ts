@@ -9,6 +9,7 @@
 import { delay } from "./delay"
 import { ensureError } from "./errors"
 import { isNumber } from "./guards"
+import { purry } from "./purry"
 
 export interface RetryArgs {
     count: number,
@@ -71,7 +72,40 @@ export interface RetryOnFailArgs {
      */
     logger?: Pick<Console, 'warn'>
 }
-export function retryOnFail<I extends any[], R>(fn: (...args: I) => Promise<R>, options?: RetryOnFailArgs): (...args: I) => Promise<R> {
+
+/**
+ * Function middleware that retry function if function crashes
+ * @description
+ * By default `retryOnFail` function uses `RETRY_STRATEGIES.EXP` strategy this strategy tries maximum 5 times and after each retry delays `Math.pow(count, 2) * 1000`
+ * @param fn - target function
+ * @param options - additional retry options
+ * @signature
+ *    const newFn = R.retryOnFail(fn)
+ * @example
+ *    const request = (url: string) => axios.get(url)
+ *    const requestWithRetry = R.retryOnFail(request)
+ * @data_first
+ */
+export function retryOnFail<I extends any[], R>(fn: (...args: I) => Promise<R>, options?: RetryOnFailArgs): (...args: I) => Promise<R>
+
+/**
+ * Function middleware that retry function if function crashes
+ * @description
+ * By default `retryOnFail` function uses `RETRY_STRATEGIES.EXP` strategy this strategy tries maximum 5 times and after each retry delays `Math.pow(count, 2) * 1000`
+ * @param fn - target function
+ * @param options - additional retry options
+ * @signature
+ *    const newFn = R.pipe(fn, R.retryOnFail())
+ * @example
+ *    const request = (url: string) => axios.get(url)
+ *    const requestWithRetry = P.pipe(request, R.retryOnFail())
+ * @data_first
+ */
+export function retryOnFail<I extends any[], R>(options?: RetryOnFailArgs): (fn: (...args: I) => Promise<R>) => (...args: I) => Promise<R>
+export function retryOnFail() {
+    return purry(_retryOnFail, arguments);
+}
+function _retryOnFail<I extends any[], R>(fn: (...args: I) => Promise<R>, options?: RetryOnFailArgs): (...args: I) => Promise<R> {
     const { retryStrategy: retryFn = defaultRetryStrategy } = options || {}
     return (...args: I) => {
         const startTime = Date.now()
@@ -90,3 +124,4 @@ export function retryOnFail<I extends any[], R>(fn: (...args: I) => Promise<R>, 
         })
     }
 }
+
