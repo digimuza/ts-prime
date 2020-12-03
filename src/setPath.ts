@@ -27,7 +27,14 @@ export function setPath(obj: { [k: string]: unknown } | Array<unknown>, path: (s
        if (k != null) {
         if (result[k] == null) {
             result[k] = pathCloned.length === 0 ? value : {}
+            result = result[k]
+            continue
+        } 
+
+        if (pathCloned.length === 0) {
+            result[k] = value
         }
+        
         result = result[k]
        }
     }
