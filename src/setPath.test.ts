@@ -18,9 +18,9 @@ test("setPath set existing value", () => {
 
 
 test("setPath overwrite entire path", () => {
-    expect(setPath({ a: { b: { c: { d: 58 } } } }, "a.b".split('.'), 22)).toEqual({ a: { b: 22 })
+    expect(setPath({ a: { b: { c: { d: 58 } } } }, "a.b".split('.'), 22)).toEqual({ a: { b: 22 } })
 })
 
 test("setPath overwrite entire path", () => {
-    expect(setPath({ a: { b: { c: { d: 58 } } } }, "a.b".split('.'), [1, 2, 3, 4, 5])).toEqual({"a": {"b": [1, 2, 3, 4, 5]}})
+    expect(setPath({ a: { b: { c: { d: 58 } } } }, "a.b".split('.'), [1, 2, 3, 4, 5])).toEqual({ "a": { "b": [1, 2, 3, 4, 5] } })
 })
