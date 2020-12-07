@@ -5,9 +5,9 @@ import { purry } from './purry';
  * @param array the target array
  * @param n the number of elements to skip
  * @signature
- *    R.dropLast(array, n)
+ *    P.dropLast(array, n)
  * @example
- *    R.dropLast([1, 2, 3, 4, 5], 2) // => [1, 2, 3]
+ *    P.dropLast([1, 2, 3, 4, 5], 2) // => [1, 2, 3]
  * @data_first
  * @category Array
  */
@@ -18,9 +18,9 @@ export function dropLast<T>(array: readonly T[], n: number): T[];
  * @param array the target array
  * @param n the number of elements to skip
  * @signature
- *    R.dropLast(n)(array)
+ *    P.dropLast(n)(array)
  * @example
- *    R.dropLast(2)([1, 2, 3, 4, 5]) // => [1, 2, 3]
+ *    P.dropLast(2)([1, 2, 3, 4, 5]) // => [1, 2, 3]
  * @data_last
  * @category Array
  */

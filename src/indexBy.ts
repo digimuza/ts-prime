@@ -6,33 +6,20 @@ import { PredIndexedOptional, PredIndexed } from './_types';
  * @param array the array
  * @param fn the indexing function
  * @signature
- *    R.indexBy(array, fn)
+ *    P.indexBy(array, fn)
+ *    P.indexBy(fn)(array)
  * @example
- *    R.indexBy(['one', 'two', 'three'], x => x.length) // => {3: 'two', 5: 'three'}
- * @data_first
- * @indexed
- * @category Array
+ *    P.indexBy(['one', 'two', 'three'], x => x.length) // => {3: 'two', 5: 'three'}
+ *    P.pipe(
+ *      ['one', 'two', 'three'],
+ *      P.indexBy(x => x.length)
+ *    ) // => {3: 'two', 5: 'three'}
+ * @category Array, Pipe
  */
 export function indexBy<T>(
   array: readonly T[],
   fn: (item: T) => any
 ): Record<string, T>;
-
-/**
- * Converts a list of objects into an object indexing the objects by the given key.
- * @param array the array
- * @param fn the indexing function
- * @signature
- *    R.indexBy(fn)(array)
- * @example
- *    R.pipe(
- *      ['one', 'two', 'three'],
- *      R.indexBy(x => x.length)
- *    ) // => {3: 'two', 5: 'three'}
- * @data_last
- * @indexed
- * @category Array
- */
 export function indexBy<T>(
   fn: (item: T) => string | number
 ): (array: readonly T[]) => Record<string, T>;

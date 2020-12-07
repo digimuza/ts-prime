@@ -19,63 +19,65 @@ const expected = {
 const employees = [
   {
     name: 'John',
-    skills: ["Printing", 'Painting', 'Writing']
+    skills: ['Printing', 'Painting', 'Writing'],
   },
   {
     name: 'Britney',
-    skills: ["Printing", 'Managing', 'Acting']
-  }
-]
+    skills: ['Printing', 'Managing', 'Acting'],
+  },
+];
 const expectedEmployees = {
-  "Printing": [
+  Printing: [
     {
       name: 'John',
-      skills: ["Printing", 'Painting', 'Writing']
+      skills: ['Printing', 'Painting', 'Writing'],
     },
     {
       name: 'Britney',
-      skills: ["Printing", 'Managing', 'Acting']
-    }
-  ],
-  "Painting": [
-    {
-      name: 'John',
-      skills: ["Printing", 'Painting', 'Writing'] 
-    }
-  ],
-  "Managing": [
-    {
-      name: 'Britney',
-      skills: ["Printing", 'Managing', 'Acting']
-    }
-  ],
-  "Acting": [
-    {
-      name: 'Britney',
-      skills: ["Printing", 'Managing', 'Acting']
-    }
-  ],
-  "Writing": [
-    {
-      name: 'John',
-      skills: ["Printing", 'Painting', 'Writing']
+      skills: ['Printing', 'Managing', 'Acting'],
     },
-  ]
-}
+  ],
+  Painting: [
+    {
+      name: 'John',
+      skills: ['Printing', 'Painting', 'Writing'],
+    },
+  ],
+  Managing: [
+    {
+      name: 'Britney',
+      skills: ['Printing', 'Managing', 'Acting'],
+    },
+  ],
+  Acting: [
+    {
+      name: 'Britney',
+      skills: ['Printing', 'Managing', 'Acting'],
+    },
+  ],
+  Writing: [
+    {
+      name: 'John',
+      skills: ['Printing', 'Painting', 'Writing'],
+    },
+  ],
+};
 
 describe('data first', () => {
   test('groupBy', () => {
     expect(groupBy(array, x => x.a)).toEqual(expected);
   });
   test('groupBy multi keys', () => {
-    expect(groupBy(employees, (x) => x.skills)).toEqual(expectedEmployees)
-  })
+    expect(groupBy(employees, x => x.skills)).toEqual(expectedEmployees);
+  });
   test('groupBy.indexed', () => {
     expect(groupBy.indexed(array, x => x.a)).toEqual(expected);
   });
   test('groupBy.indexed multi keys', () => {
-    expect(groupBy.indexed(employees, x => x.skills)).toEqual(expectedEmployees);
-  })
+    expect(groupBy.indexed(employees, x => x.skills)).toEqual(
+      expectedEmployees
+    );
+  });
 });
 
 describe('data last', () => {

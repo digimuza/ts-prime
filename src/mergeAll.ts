@@ -2,9 +2,9 @@
  * Merges a list of objects into a single object.
  * @param array the array of objects
  * @signature
- *    R.mergeAll(objects)
+ *    P.mergeAll(objects)
  * @example
- *    R.mergeAll([{ a: 1, b: 1 }, { b: 2, c: 3 }, { d: 10 }]) // => { a: 1, b: 2, c: 3, d: 10 }
+ *    P.mergeAll([{ a: 1, b: 1 }, { b: 2, c: 3 }, { d: 10 }]) // => { a: 1, b: 2, c: 3, d: 10 }
  * @category Array
  */
 export function mergeAll<A>(array: readonly [A]): A;

@@ -6,9 +6,9 @@ import { purry } from './purry';
  * @param a the first object
  * @param b the second object
  * @signature
- *    R.merge(a, b)
+ *    P.merge(a, b)
  * @example
- *    R.merge({ x: 1, y: 2 }, { y: 10, z: 2 }) // => { x: 1, y: 10, z: 2 }
+ *    P.merge({ x: 1, y: 2 }, { y: 10, z: 2 }) // => { x: 1, y: 10, z: 2 }
  * @data_first
  * @category Object
  */
@@ -18,9 +18,9 @@ export function merge<A, B>(a: A, b: B): A & B;
  * Merges two objects. The same as `Object.assign`. `b` object will override properties of `a`.
  * @param b the second object
  * @signature
- *    R.merge(b)(a)
+ *    P.merge(b)(a)
  * @example
- *    R.merge({ y: 10, z: 2 })({ x: 1, y: 2 }) // => { x: 1, y: 10, z: 2 }
+ *    P.merge({ y: 10, z: 2 })({ x: 1, y: 2 }) // => { x: 1, y: 10, z: 2 }
  * @data_last
  * @category Object
  */

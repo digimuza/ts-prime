@@ -8,41 +8,25 @@ import { _toSingle } from './_toSingle';
  * @param items the array
  * @param fn the predicate
  * @signature
- *    R.find(items, fn)
- *    R.find.indexed(items, fn)
+ *    P.find(items, fn)
+ * @signature
+ *    P.find(fn)(items)
  * @example
- *    R.find([1, 3, 4, 6], n => n % 2 === 0) // => 4
- *    R.find.indexed([1, 3, 4, 6], (n, i) => n % 2 === 0) // => 4
- * @data_first
- * @indexed
- * @pipeable
- * @category Array
+ *    P.find([1, 3, 4, 6], n => n % 2 === 0) // => 4
+ *    P.pipe(
+ *      [1, 3, 4, 6],
+ *      P.find(n => n % 2 === 0)
+ *    ) // => 4
+ *    P.pipe(
+ *      [1, 3, 4, 6],
+ *      P.find.indexed((n, i) => n % 2 === 0)
+ *    ) // => 4
+ * @category Array, Pipe
  */
 export function find<T>(
   array: readonly T[],
   fn: Pred<T, boolean>
 ): T | undefined;
-
-/**
- * Returns the value of the first element in the array where predicate is true, and undefined otherwise.
- * @param fn the predicate
- * @signature
- *    R.find(fn)(items)
- *    R.find.indexed(fn)(items)
- * @example
- *    R.pipe(
- *      [1, 3, 4, 6],
- *      R.find(n => n % 2 === 0)
- *    ) // => 4
- *    R.pipe(
- *      [1, 3, 4, 6],
- *      R.find.indexed((n, i) => n % 2 === 0)
- *    ) // => 4
- * @data_last
- * @indexed
- * @pipeable
- * @category Array
- */
 export function find<T = never>(
   fn: Pred<T, boolean>
 ): (array: readonly T[]) => T | undefined;

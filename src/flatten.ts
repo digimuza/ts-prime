@@ -8,12 +8,12 @@ type Flatten<T> = T extends ReadonlyArray<infer K> ? K : T;
  * Note: In `pipe`, use `flatten()` form instead of `flatten`. Otherwise, the inferred type is lost.
  
  * @param items the target array
- * @signature R.flatten(array)
+ * @signature P.flatten(array)
  * @example
- *    R.flatten([[1, 2], [3], [4, 5]]) // => [1, 2, 3, 4, 5]
- *    R.pipe(
+ *    P.flatten([[1, 2], [3], [4, 5]]) // => [1, 2, 3, 4, 5]
+ *    P.pipe(
  *      [[1, 2], [3], [4, 5]],
- *      R.flatten(),
+ *      P.flatten(),
  *    ); // => [1, 2, 3, 4, 5]
  * @category Array
  * @pipeable

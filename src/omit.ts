@@ -5,28 +5,19 @@ import { purry } from './purry';
  * @param object the object
  * @param names the property names
  * @signature
- *    R.omit(obj, names);
+ *    P.omit(obj, names);
+ * @signature
+ *    P.omit(names)(obj);
  * @example
- *    R.omit({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { b: 2, c: 3 }
- * @data_first
- * @category Object
+ *    P.omit({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { b: 2, c: 3 }
+ *    P.pipe({ a: 1, b: 2, c: 3, d: 4 }, P.omit(['a', 'd'])) // => { b: 2, c: 3 }
+ * @category Object, Pipe
  */
 export function omit<T extends {}, K extends keyof T>(
   object: T,
   names: readonly K[]
 ): Omit<T, K>;
 
-/**
- * Returns a partial copy of an object omitting the keys specified.
- * @param object the object
- * @param names the property names
- * @signature
- *    R.omit(names)(obj);
- * @example
- *    R.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.omit(['a', 'd'])) // => { b: 2, c: 3 }
- * @data_last
- * @category Object
- */
 export function omit<T extends {}, K extends keyof T>(
   names: readonly K[]
 ): (object: T) => Omit<T, K>;

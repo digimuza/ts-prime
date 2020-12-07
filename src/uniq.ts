@@ -7,18 +7,18 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
  * Note: In `pipe`, use `uniq()` form instead of `uniq`. Otherwise, the inferred type is lost.
  * @param array - List of items
  * @signature
- *    R.uniq(array)
+ *    P.uniq(array)
+ * @signature
+ *    P.pipe(array, P.uniq())
  * @example
- *    R.uniq([1, 2, 2, 5, 1, 6, 7]) // => [1, 2, 5, 6, 7]
- *    R.pipe(
+ *    P.uniq([1, 2, 2, 5, 1, 6, 7]) // => [1, 2, 5, 6, 7]
+ *    P.pipe(
  *      [1, 2, 2, 5, 1, 6, 7], // only 4 iterations
- *      R.uniq(),
- *      R.take(3)
+ *      P.uniq(),
+ *      P.take(3)
  *    ) // => [1, 2, 5]
- * @pipeable
- * @category Array
+ * @category Array, Pipe
  */
-
 export function uniq<T>(array: readonly T[]): T[];
 export function uniq<T>(): (array: readonly T[]) => T[];
 

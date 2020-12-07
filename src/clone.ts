@@ -50,12 +50,14 @@ function _clone(value: any, refFrom: any[], refTo: any[], deep: boolean) {
 /**
  * Creates a deep copy of the value. Supported types: `Array`, `Object`, `Number`, `String`, `Boolean`, `Date`, `RegExp`. Functions are assigned by reference rather than copied.
  * @param value - the object to clone
+ * @signature P.clone(value)
+ * @example P.clone({foo: 'bar'}) // {foo: 'bar'}
  * @category Object
- * @signature R.clone(value)
- * @example R.clone({foo: 'bar'}) // {foo: 'bar'}
  */
 export function clone<T extends any>(value: T): T {
+  // @ts-ignore
   return value != null && typeof value.clone === 'function'
+  // @ts-ignore
     ? value.clone()
     : _clone(value, [], [], true);
 }

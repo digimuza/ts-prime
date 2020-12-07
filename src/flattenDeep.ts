@@ -10,12 +10,12 @@ type FlattenDeep4<T> = T extends ReadonlyArray<infer K> ? K : T;
  * Recursively flattens `array`.
  * Note: In `pipe`, use `flattenDeep()` form instead of `flattenDeep`. Otherwise, the inferred type is lost.
  * @param items the target array
- * @signature R.flattenDeep(array)
+ * @signature P.flattenDeep(array)
  * @example
- *    R.flattenDeep([[1, 2], [[3], [4, 5]]]) // => [1, 2, 3, 4, 5]
- *    R.pipe(
+ *    P.flattenDeep([[1, 2], [[3], [4, 5]]]) // => [1, 2, 3, 4, 5]
+ *    P.pipe(
  *      [[1, 2], [[3], [4, 5]]],
- *      R.flattenDeep(),
+ *      P.flattenDeep(),
  *    ); // => [1, 2, 3, 4, 5]
  * @category Array
  * @pipeable

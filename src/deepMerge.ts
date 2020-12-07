@@ -2,7 +2,7 @@ import { isDefined, isArray, isObject } from './guards';
 import { uniq } from './uniq';
 import { clone } from './clone';
 
-export interface DeepPartialArray<T> extends Array<DeepPartial<T>> { }
+export interface DeepPartialArray<T> extends Array<DeepPartial<T>> {}
 export type DeepPartial<T> = T extends Function
   ? T
   : T extends Array<infer U>
@@ -84,7 +84,7 @@ function recursiveMerge(a: unknown, b: unknown): unknown {
   }
 
   if (b === '') {
-    return a
+    return a;
   }
 
   return b;

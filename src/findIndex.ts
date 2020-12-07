@@ -8,39 +8,18 @@ import { _toSingle } from './_toSingle';
  * @param items - the array
  * @param fn - the predicate
  * @signature
- *    R.findIndex(items, fn)
- *    R.findIndex.indexed(items, fn)
+ *    P.findIndex(items, fn)
+ * @signature
+ *    P.findIndex(fn)(items)
  * @example
- *    R.findIndex([1, 3, 4, 6], n => n % 2 === 0) // => 2
- *    R.findIndex.indexed([1, 3, 4, 6], (n, i) => n % 2 === 0) // => 2
- * @data_first
- * @indexed
- * @pipeable
- * @category Array
+ *    P.findIndex([1, 3, 4, 6], n => n % 2 === 0) // => 2
+ *    P.pipe(
+ *      [1, 3, 4, 6],
+ *      P.findIndex(n => n % 2 === 0)
+ *    ) // => 4
+ * @category Array, Pipe
  */
 export function findIndex<T>(array: readonly T[], fn: Pred<T, boolean>): number;
-
-/**
- * Returns the index of the first element in the array where predicate is true, and -1 otherwise.
- * @param items - the array
- * @param fn - the predicate
- * @signature
- *    R.findIndex(fn)(items)
- *    R.findIndex.indexed(fn)(items)
- * @example
- *    R.pipe(
- *      [1, 3, 4, 6],
- *      R.findIndex(n => n % 2 === 0)
- *    ) // => 4
- *    R.pipe(
- *      [1, 3, 4, 6],
- *      R.findIndex.indexed((n, i) => n % 2 === 0)
- *    ) // => 4
- * @data_last
- * @indexed
- * @pipeable
- * @category Array
- */
 export function findIndex<T>(
   fn: Pred<T, boolean>
 ): (array: readonly T[]) => number;

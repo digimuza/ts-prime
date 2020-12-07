@@ -1,7 +1,6 @@
 import { path } from './path';
 import { pipe } from './pipe';
 
-
 const testData = {
   t1: {
     obj: {
@@ -9,16 +8,16 @@ const testData = {
         b: {
           c: {
             d: {
-              a: [0]
-            }
-          }
-        }
-      }
+              a: [0],
+            },
+          },
+        },
+      },
     },
-    path: "a.b.c.d.a.0".split("."),
-    expect: 0
-  }
-}
+    path: 'a.b.c.d.a.0'.split('.'),
+    expect: 0,
+  },
+};
 
 describe('data first', () => {
   test('1 level', () => {
@@ -28,6 +27,8 @@ describe('data first', () => {
 
 describe('data last', () => {
   test('1 level', () => {
-    expect(pipe(testData.t1.obj, path(testData.t1.path))).toEqual(testData.t1.expect);
+    expect(pipe(testData.t1.obj, path(testData.t1.path))).toEqual(
+      testData.t1.expect
+    );
   });
 });

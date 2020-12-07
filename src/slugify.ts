@@ -1,42 +1,43 @@
-import { normalizeString } from './normalizeString'
+import { normalizeString } from './normalizeString';
 
 /**
  * Converts any string to slug
  * @param str the string
  * @signature
- *    R.slugify(str);
+ *    P.slugify(str);
  * @example
- *    R.slugify("Super ball cup") // => super-ball-cup
- * @data_first
+ *    P.slugify("Super ball cup") // => super-ball-cup
  * @category String
  */
 export function slugify(str: string) {
-    const qw = str.split(" ").map((q) => normalizeString(q)).join("-")
-    str = qw.replace(/^\s+|\s+$/g, "");
+  const qw = str
+    .split(' ')
+    .map(q => normalizeString(q))
+    .join('-');
+  str = qw.replace(/^\s+|\s+$/g, '');
 
-    // Make the string lowercase
-    str = str.toLowerCase();
+  // Make the string lowercase
+  str = str.toLowerCase();
 
-    // Remove accents, swap ñ for n, etc
-    var from =
-        "ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa·/_,:;";
-    var to =
-        "AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa------";
-    for (var i = 0, l = from.length; i < l; i++) {
-        str = str.replace(new RegExp(from.charAt(i), "g"), to.charAt(i));
-    }
+  // Remove accents, swap ñ for n, etc
+  var from =
+    'ÁÄÂÀÃÅČÇĆĎÉĚËÈÊẼĔȆÍÌÎÏŇÑÓÖÒÔÕØŘŔŠŤÚŮÜÙÛÝŸŽáäâàãåčçćďéěëèêẽĕȇíìîïňñóöòôõøðřŕšťúůüùûýÿžþÞĐđßÆa·/_,:;';
+  var to =
+    'AAAAAACCCDEEEEEEEEIIIINNOOOOOORRSTUUUUUYYZaaaaaacccdeeeeeeeeiiiinnooooooorrstuuuuuyyzbBDdBAa------';
+  for (var i = 0, l = from.length; i < l; i++) {
+    str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+  }
 
-    // Remove invalid chars
-    str = str
-        .replace(/[^a-z0-9 -]/g, "")
-        // Collapse whitespace and replace by -
-        .replace(/\s+/g, "-")
-        // Collapse dashes
-        .replace(/-+/g, "-");
+  // Remove invalid chars
+  str = str
+    .replace(/[^a-z0-9 -]/g, '')
+    // Collapse whitespace and replace by -
+    .replace(/\s+/g, '-')
+    // Collapse dashes
+    .replace(/-+/g, '-');
 
-
-    if (str[str.length - 1] === '-') {
-        return str.slice(0, str.length - 1)
-     }
-    return str;
+  if (str[str.length - 1] === '-') {
+    return str.slice(0, str.length - 1);
+  }
+  return str;
 }

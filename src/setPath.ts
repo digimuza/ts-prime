@@ -1,10 +1,10 @@
-import { clone } from "./clone"
-import { isArray, isObject } from "./guards"
-import { type } from "./type"
+import { clone } from './clone';
+import { isArray, isObject } from './guards';
+import { type } from './type';
 
- /**
+/**
  * Dynamically sets object path
- * @param obj - Target object
+ * @param target - Target object
  * @param path - Path in object
  * @param value - On final object element
  * @signature
@@ -15,28 +15,34 @@ import { type } from "./type"
  * ```
  * @category Object
  */
-export function setPath(obj: { [k: string]: unknown } | Array<unknown>, path: (string | number)[], value: unknown): unknown {
-    if (!(isObject(obj) || isArray(obj))) {
-        throw new Error(`Expecting to receive object or array. But received ${type(obj)}`)
-    }
-    const xObject = clone(obj)
-    let result = xObject as any
-    const pathCloned = [...path]
-    while(pathCloned.length !== 0) {
-       const k = pathCloned.shift()
-       if (k != null) {
-        if (result[k] == null) {
-            result[k] = pathCloned.length === 0 ? value : {}
-            result = result[k]
-            continue
-        } 
+export function setPath(
+  target: { [k: string]: unknown } | Array<unknown>,
+  path: (string | number)[],
+  value: unknown
+): unknown {
+  if (!(isObject(target) || isArray(target))) {
+    throw new Error(
+      `Expecting to receive object or array. But received ${type(target)}`
+    );
+  }
+  const clonedTarget = clone(target);
+  let result = clonedTarget as any;
+  const clonedPath = [...path];
+  while (clonedPath.length !== 0) {
+    const k = clonedPath.shift();
+    if (k != null) {
+      if (result[k] == null) {
+        result[k] = clonedPath.length === 0 ? value : {};
+        result = result[k];
+        continue;
+      }
 
-        if (pathCloned.length === 0) {
-            result[k] = value
-        }
-        
-        result = result[k]
-       }
+      if (clonedPath.length === 0) {
+        result[k] = value;
+      }
+
+      result = result[k];
     }
-    return xObject
+  }
+  return clonedTarget;
 }

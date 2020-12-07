@@ -6,9 +6,9 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
  * @param array - the target array
  * @param n - the number of elements to skip
  * @signature
- *    R.drop(array, n)
+ *    P.drop(array, n)
  * @example
- *    R.drop([1, 2, 3, 4, 5], 2) // => [1, 2, 3]
+ *    P.drop([1, 2, 3, 4, 5], 2) // => [1, 2, 3]
  * @data_first
  * @pipeable
  * @category Array
@@ -20,9 +20,9 @@ export function drop<T>(array: readonly T[], n: number): T[];
  * @param array - the target array
  * @param n - the number of elements to skip
  * @signature
- *    R.drop(n)(array)
+ *    P.drop(n)(array)
  * @example
- *    R.drop(2)([1, 2, 3, 4, 5]) // => [1, 2, 3]
+ *    P.drop(2)([1, 2, 3, 4, 5]) // => [1, 2, 3]
  * @data_last
  * @pipeable
  * @category Array

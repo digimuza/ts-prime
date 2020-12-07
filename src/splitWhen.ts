@@ -6,27 +6,18 @@ import { purry } from './purry';
  * @param array the array to split
  * @param fn the predicate
  * @signature
- *    R.splitWhen(array, fn)
+ *    P.splitWhen(array, fn)
+ * @signature
+ *    P.splitWhen(fn)(array)
  * @example
- *    R.splitWhen([1, 2, 3], x => x === 2) // => [[1], [2, 3]]
- * @data_first
- * @category Array
+ *    P.splitWhen([1, 2, 3], x => x === 2) // => [[1], [2, 3]]
+ *    P.splitWhen(x => x === 2)([1, 2, 3]) // => [[1], [2, 3]]
+ * @category Array, Pipe
  */
 export function splitWhen<T>(
   array: readonly T[],
   fn: (item: T) => boolean
 ): [T[], T[]];
-
-/**
- * Splits a given array at an index where the given predicate returns true.
- * @param fn the predicate
- * @signature
- *    R.splitWhen(fn)(array)
- * @example
- *    R.splitWhen(x => x === 2)([1, 2, 3]) // => [[1], [2, 3]]
- * @data_last
- * @category Array
- */
 export function splitWhen<T>(
   fn: (item: T) => boolean
 ): (array: readonly T[]) => [T[], T[]];

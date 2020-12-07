@@ -7,15 +7,15 @@ const hasProp = Object.prototype.hasOwnProperty;
 
 /**
  * Returns true if its arguments are equivalent, false otherwise.
- * NOTE: Doesn't handle cyclical data structures.
+ * @warning Doesn't handle cyclical data structures.
  * @param a the first object to compare
  * @param b the second object to compare
  * @signature
- *    R.equals(a, b)
+ *    P.equals(a, b)
  * @example
- *    R.equals(1, 1) //=> true
- *    R.equals(1, '1') //=> false
- *    R.equals([1, 2, 3], [1, 2, 3]) //=> true
+ *    P.equals(1, 1) //=> true
+ *    P.equals(1, '1') //=> false
+ *    P.equals([1, 2, 3], [1, 2, 3]) //=> true
  * @data_first
  * @category Object
  */
@@ -23,15 +23,15 @@ export function equals(a: any, b: any): boolean;
 
 /**
  * Returns true if its arguments are equivalent, false otherwise.
- * NOTE: Doesn't handle cyclical data structures.
+ * @warning Doesn't handle cyclical data structures.
  * @param a the first object to compare
  * @param b the second object to compare
  * @signature
- *    R.equals(b)(a)
+ *    P.equals(b)(a)
  * @example
- *    R.equals(1)(1) //=> true
- *    R.equals('1')(1) //=> false
- *    R.equals([1, 2, 3])([1, 2, 3]) //=> true
+ *    P.equals(1)(1) //=> true
+ *    P.equals('1')(1) //=> false
+ *    P.equals([1, 2, 3])([1, 2, 3]) //=> true
  * @data_last
  * @category Object
  */

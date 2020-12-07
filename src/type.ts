@@ -3,22 +3,18 @@
  * Gives a single-word string description of the (native) type of a value, returning such answers as 'Object', 'Number', 'Array', or 'Null'. Does not attempt to distinguish user Object types any further, reporting them all as 'Object'.
  * @param val
  * @signature
- * ```ts
- *    R.type(obj)
- * ```
+ *    P.type(obj)
  * @example
- * ```ts
- *    R.type({}); //=> "Object"
- *    R.type(1); //=> "Number"
- *    R.type(false); //=> "Boolean"
- *    R.type('s'); //=> "String"
- *    R.type(null); //=> "Null"
- *    R.type([]); //=> "Array"
- *    R.type(/[A-z]/); //=> "RegExp"
- *    R.type(() => {}); //=> "Function"
- *    R.type(undefined); //=> "Undefined"
- * ```
- * @category Type
+ *    P.type({}); //=> "Object"
+ *    P.type(1); //=> "Number"
+ *    P.type(false); //=> "Boolean"
+ *    P.type('s'); //=> "String"
+ *    P.type(null); //=> "Null"
+ *    P.type([]); //=> "Array"
+ *    P.type(/[A-z]/); //=> "RegExp"
+ *    P.type(() => {}); //=> "Function"
+ *    P.type(undefined); //=> "Undefined"
+ * @category Utility
  */
 export function type(val: any) {
   return val === null

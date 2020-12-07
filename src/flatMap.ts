@@ -6,9 +6,9 @@ import { purry } from './purry';
  * @param array The array to map.
  * @param fn The function mapper.
  * @signature
- *    R.flatMap(array, fn)
+ *    P.flatMap(array, fn)
  * @example
- *    R.flatMap([1, 2, 3], x => [x, x * 10]) // => [1, 10, 2, 20, 3, 30]
+ *    P.flatMap([1, 2, 3], x => [x, x * 10]) // => [1, 10, 2, 20, 3, 30]
  * @data_first
  * @pipeable
  * @category Array
@@ -23,9 +23,9 @@ export function flatMap<T, K>(
  * @param array The array to map.
  * @param fn The function mapper.
  * @signature
- *    R.flatMap(fn)(array)
+ *    P.flatMap(fn)(array)
  * @example
- *    R.pipe([1, 2, 3], R.flatMap(x => [x, x * 10])) // => [1, 10, 2, 20, 3, 30]
+ *    P.pipe([1, 2, 3], P.flatMap(x => [x, x * 10])) // => [1, 10, 2, 20, 3, 30]
  * @data_last
  * @pipeable
  * @category Array
@@ -38,6 +38,9 @@ export function flatMap() {
   return purry(_flatMap, arguments);
 }
 
-function _flatMap<T, K>(array: readonly T[], fn: (input: T, index: number, arr: readonly T[]) => K[]): readonly K[] {
+function _flatMap<T, K>(
+  array: readonly T[],
+  fn: (input: T, index: number, arr: readonly T[]) => K[]
+): readonly K[] {
   return flatten(array.map((item, index, array) => fn(item, index, array)));
 }

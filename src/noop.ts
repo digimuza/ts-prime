@@ -1,9 +1,9 @@
 /**
  * A function that returns always `undefined`.
  * @signature
- *    R.noop()
- * @example
- *    onSomething(R.noop)
+ *    P.noop()
  * @category Function
  */
-export const noop = () => undefined as any;
+export function noop(): any {
+  return undefined;
+}

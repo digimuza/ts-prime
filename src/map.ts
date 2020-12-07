@@ -9,32 +9,15 @@ import { Pred, PredIndexedOptional, PredIndexed } from './_types';
  * @param fn The function mapper.
  * @returns The new mapped array.
  * @signature
- *    R.map(array, fn)
- *    R.map.indexed(array, fn)
+ *    P.map(array, fn)
+ * @signature
+ *    P.map(fn)(array)
  * @example
- *    R.map([1, 2, 3], x => x * 2) // => [2, 4, 6]
- *    R.map.indexed([0, 0, 0], (x, i) => i) // => [0, 1, 2]
- * @data_first
- * @indexed
- * @pipeable
- * @category Array
+ *    P.map([1, 2, 3], x => x * 2) // => [2, 4, 6]
+ *    P.pipe([0, 1, 2], P.map(x => x * 2)) // => [2, 4, 6]
+ * @category Array, Pipe
  */
 export function map<T, K>(array: readonly T[], fn: Pred<T, K>): K[];
-
-/**
- * Map each value of an object using a defined callback function.
- * @param fn the function mapper
- * @signature
- *    R.map(fn)(array)
- *    R.map.indexed(fn)(array)
- * @example
- *    R.pipe([0, 1, 2], R.map(x => x * 2)) // => [2, 4, 6]
- *    R.pipe([0, 0, 0], R.map.indexed((x, i) => i)) // => [0, 1, 2]
- * @data_last
- * @indexed
- * @pipeable
- * @category Array
- */
 export function map<T, K>(fn: Pred<T, K>): (array: readonly T[]) => K[];
 
 export function map() {

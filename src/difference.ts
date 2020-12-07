@@ -6,9 +6,9 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
  * @param array - the source array
  * @param other - the values to exclude
  * @signature
- *    R.difference(array, other)
+ *    P.difference(array, other)
  * @example
- *    R.difference([1, 2, 3, 4], [2, 5, 3]) // => [1, 4]
+ *    P.difference([1, 2, 3, 4], [2, 5, 3]) // => [1, 4]
  * @data_first
  * @category Array
  * @pipeable
@@ -19,13 +19,13 @@ export function difference<T>(array: readonly T[], other: readonly T[]): T[];
  * Excludes the values from `other` array.
  * @param other the values to exclude
  * @signature
- *    R.difference(other)(array)
+ *    P.difference(other)(array)
  * @example
- *    R.difference([2, 5, 3])([1, 2, 3, 4]) // => [1, 4]
- *    R.pipe(
+ *    P.difference([2, 5, 3])([1, 2, 3, 4]) // => [1, 4]
+ *    P.pipe(
  *      [1, 2, 3, 4, 5, 6], // only 4 iterations
- *      R.difference([2, 3]),
- *      R.take(2)
+ *      P.difference([2, 3]),
+ *      P.take(2)
  *    ) // => [1, 4]
  * @data_last
  * @category Array

@@ -1,7 +1,7 @@
-import { normalizeString } from "./normalizeString"
+import { normalizeString } from './normalizeString';
 
 test('Normalize string', () => {
-    expect(normalizeString('Čiabuviai  $#%')).toEqual("ciabuviai")
-    expect(normalizeString('@ŽČĘĖĮŠŲŪ();;\'  $#%')).toEqual("zceeisuu")
-    expect(normalizeString('Andrius Mozūraitis')).toEqual("andriusmozuraitis")
-})
+  expect(normalizeString('Čiabuviai  $#%')).toEqual('ciabuviai');
+  expect(normalizeString("@ŽČĘĖĮŠŲŪ();;'  $#%")).toEqual('zceeisuu');
+  expect(normalizeString('Andrius Mozūraitis')).toEqual('andriusmozuraitis');
+});

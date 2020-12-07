@@ -6,10 +6,8 @@
  *
  * @param fn the function to purry.
  * @param args the arguments
- * @signature R.purry(fn, arguments);
+ * @signature P.purry(fn, arguments);
  * @example
- * ```js
- *    
  *    function _findIndex(array, fn) {
  *      for (let i = 0; i < array.length; i++) {
  *        if (fn(array[i])) {
@@ -26,9 +24,8 @@
  *    function findIndex<T>(fn: (item: T) => boolean): (array: T[]) => number;
  *
  *    function findIndex() {
- *      return R.purry(_findIndex, arguments);
+ *      return P.purry(_findIndex, arguments);
  *    }
- * ```
  * @category Function
  */
 export function purry(fn: any, args: IArguments | readonly any[], lazy?: any) {

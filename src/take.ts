@@ -6,26 +6,15 @@ import { _reduceLazy, LazyResult } from './_reduceLazy';
  * @param array the array
  * @param n the number of elements to take
  * @signature
- *    R.take(array, n)
+ *    P.take(array, n)
+ * @signature
+ *    P.take(n)(array)
  * @example
- *    R.take([1, 2, 3, 4, 3, 2, 1], 3) // => [1, 2, 3]
- * @data_first
- * @pipeable
- * @category Array
+ *    P.take([1, 2, 3, 4, 3, 2, 1], 3) // => [1, 2, 3]
+ *    P.pipe([1, 2, 3, 4, 3, 2, 1], P.take(n)) // => [1, 2, 3]
+ * @category Array, Pipe
  */
 export function take<T>(array: readonly T[], n: number): T[];
-
-/**
- * Returns the first `n` elements of `array`.
- * @param n the number of elements to take
- * @signature
- *    R.take(n)(array)
- * @example
- *    R.pipe([1, 2, 3, 4, 3, 2, 1], R.take(n)) // => [1, 2, 3]
- * @data_last
- * @pipeable
- * @category Array
- */
 export function take<T>(n: number): (array: readonly T[]) => T[];
 
 export function take() {

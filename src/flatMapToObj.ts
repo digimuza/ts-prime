@@ -7,13 +7,13 @@ import { purry } from './purry';
  * @param fn The mapping function, which should return an Array of key-value pairs, similar to Object.fromEntries
  * @returns The new mapped object.
  * @signature
- *    R.flatMapToObj(array, fn)
- *    R.flatMapToObj.indexed(array, fn)
+ *    P.flatMapToObj(array, fn)
+ *    P.flatMapToObj.indexed(array, fn)
  * @example
- *  R.flatMapToObj([1, 2, 3], (x) =>
+ *  P.flatMapToObj([1, 2, 3], (x) =>
  *    x % 2 === 1 ? [[String(x), x]] : []
  *  ) // => {1: 1, 3: 3}
- *  R.flatMapToObj.indexed(['a', 'b'], (x, i) => [
+ *  P.flatMapToObj.indexed(['a', 'b'], (x, i) => [
  *    [x, i],
  *    [x + x, i + i],
  *  ]) // => {a: 0, aa: 0, b: 1, bb: 2}
@@ -22,8 +22,8 @@ import { purry } from './purry';
  * @category Array
  */
 export function flatMapToObj<T, K extends string | number | symbol, V>(
-    array: readonly T[],
-    fn: (element: T, index: number, array: readonly T[]) => [K, V][]
+  array: readonly T[],
+  fn: (element: T, index: number, array: readonly T[]) => [K, V][]
 ): Record<K, V>;
 
 /**
@@ -31,16 +31,16 @@ export function flatMapToObj<T, K extends string | number | symbol, V>(
  * @param fn The mapping function, which should return an Array of key-value pairs, similar to Object.fromEntries
  * @returns The new mapped object.
  * @signature
- *    R.flatMapToObj(fn)(array)
- *    R.flatMapToObj(fn)(array)
+ *    P.flatMapToObj(fn)(array)
+ *    P.flatMapToObj(fn)(array)
  * @example
- *    R.pipe(
+ *    P.pipe(
  *      [1, 2, 3],
- *      R.flatMapToObj(x => (x % 2 === 1 ? [[String(x), x]] : []))
+ *      P.flatMapToObj(x => (x % 2 === 1 ? [[String(x), x]] : []))
  *    ) // => {1: 1, 3: 3}
- *    R.pipe(
+ *    P.pipe(
  *      ['a', 'b'],
- *      R.flatMapToObj.indexed((x, i) => [
+ *      P.flatMapToObj.indexed((x, i) => [
  *        [x, i],
  *        [x + x, i + i],
  *      ])
@@ -50,22 +50,22 @@ export function flatMapToObj<T, K extends string | number | symbol, V>(
  * @category Array
  */
 export function flatMapToObj<T, K extends string | number | symbol, V>(
-    fn: (element: T, index: number, array: readonly T[]) => [K, V][]
+  fn: (element: T, index: number, array: readonly T[]) => [K, V][]
 ): (array: readonly T[]) => Record<K, V>;
 
 export function flatMapToObj() {
-    return purry(_flatMapToObj(), arguments);
+  return purry(_flatMapToObj(), arguments);
 }
 
 const _flatMapToObj = () => <T>(
-    array: any[],
-    fn: PredIndexedOptional<any, any>
+  array: any[],
+  fn: PredIndexedOptional<any, any>
 ) => {
-    return array.reduce((result, element, index) => {
-        const items = fn(element, index, array);
-        items.forEach(([key, value]: [any, any]) => {
-            result[key] = value;
-        });
-        return result;
-    }, {});
+  return array.reduce((result, element, index) => {
+    const items = fn(element, index, array);
+    items.forEach(([key, value]: [any, any]) => {
+      result[key] = value;
+    });
+    return result;
+  }, {});
 };

@@ -11,20 +11,17 @@ export function uniqBy<T, K>(
  * Elements are compared by reference using Set.
  * @param array - List of items
  * @signature
- * ```typescript
- *    R.uniqBy(fn, array)
- * ```
+ *    P.uniqBy(fn, array)
+ * @signature
+ *    P.pipe(array, P.uniqBy(fn))
  * @example
- * ```ts
- *    R.uniq(obj => obj.n, [{n: 1}, {n: 2}, {n: 2}, {n: 5}, {n: 1}, {n: 6}, {n: 7}]) // => [{n: 1}, {n: 2}, {n: 5}, {n: 6}, {n: 7}]
- *    R.pipe(
+ *    P.uniq(obj => obj.n, [{n: 1}, {n: 2}, {n: 2}, {n: 5}, {n: 1}, {n: 6}, {n: 7}]) // => [{n: 1}, {n: 2}, {n: 5}, {n: 6}, {n: 7}]
+ *    P.pipe(
  *      [{n: 1}, {n: 2}, {n: 2}, {n: 5}, {n: 1}, {n: 6}, {n: 7}], // only 4 iterations
- *      R.uniq(obj => obj.n),
- *      R.take(3)
+ *      P.uniq(obj => obj.n),
+ *      P.take(3)
  *    ) // => [{n: 1}, {n: 2}, {n: 5}]
- * ```
- * @pipeable
- * @category Array
+ * @category Array, Pipe
  */
 
 export function uniqBy<T, K>(

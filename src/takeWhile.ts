@@ -5,27 +5,19 @@ import { purry } from './purry';
  * @param array the array
  * @param fn the predicate
  * @signature
- *    R.takeWhile(array, fn)
+ *    P.takeWhile(array, fn)
+ * @signature
+ *    P.takeWhile(fn)(array)
  * @example
- *    R.takeWhile([1, 2, 3, 4, 3, 2, 1], x => x !== 4) // => [1, 2, 3]
- * @data_first
- * @category Array
+ *    P.takeWhile([1, 2, 3, 4, 3, 2, 1], x => x !== 4) // => [1, 2, 3]
+ *    P.pipe([1, 2, 3, 4, 3, 2, 1], P.takeWhile(x => x !== 4))  // => [1, 2, 3]
+ * @category Array, Pipe
  */
 export function takeWhile<T>(
   array: readonly T[],
   fn: (item: T) => boolean
 ): T[];
 
-/**
- * Returns elements from the array until predicate returns false.
- * @param fn - the predicate
- * @signature
- *    R.takeWhile(fn)(array)
- * @example
- *    R.pipe([1, 2, 3, 4, 3, 2, 1], R.takeWhile(x => x !== 4))  // => [1, 2, 3]
- * @data_last
- * @category Array
- */
 export function takeWhile<T>(
   fn: (item: T) => boolean
 ): (array: readonly T[]) => T[];

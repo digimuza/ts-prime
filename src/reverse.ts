@@ -4,24 +4,15 @@ import { purry } from './purry';
  * Reverses array.
  * @param array the array
  * @signature
- *    R.reverse(arr);
+ *    P.reverse(arr);
+ * @signature
+ *    P.reverse()(array);
  * @example
- *    R.reverse([1, 2, 3]) // [3, 2, 1]
- * @data_first
- * @category Array
+ *    P.reverse([1, 2, 3]) // [3, 2, 1]
+ *    P.reverse()([1, 2, 3]) // [3, 2, 1]
+ * @category Array, Pipe
  */
 export function reverse<T>(array: readonly T[]): Array<T>;
-
-/**
- * Reverses array.
- * @param array the array
- * @signature
- *    R.reverse()(array);
- * @example
- *    R.reverse()([1, 2, 3]) // [3, 2, 1]
- * @data_last
- * @category Array
- */
 export function reverse<T>(): (array: readonly T[]) => Array<T>;
 
 export function reverse() {
