@@ -11,7 +11,7 @@
     "jest": "^22.4.3",
     "marked": "^0.4.0",
     "prettier": "^2.0.1",
-    "ts-docflux": "^0.0.6",
+    "ts-docflux": "^0.0.7",
     "ts-jest": "^22.4.5",
     "ts-node": "^8.4.1",
     "typedoc": "0.11.1",
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/remeda/remeda.git"
+    "url": "git+https://github.com/digimuza/ts-prime.git"
   },
   "keywords": [
     "utils",
@@ -36,9 +36,9 @@
   "author": "Andrius Mozūraitis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/remeda/remeda/issues"
+    "url": "https://github.com/digimuza/ts-prime/issues"
   },
-  "homepage": "https://github.com/remeda/remeda#readme",
+  "homepage": "https://digimuza.github.io/ts-prime",
   "jest": {
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
