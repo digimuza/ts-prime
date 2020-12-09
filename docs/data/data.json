@@ -4241,45 +4241,6 @@
 					"excerptTokens": [
 						{
 							"kind": "Content",
-							"text": "export declare function first<T>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly T[]"
-						},
-						{
-							"kind": "Content",
-							"text": ", defaultValue: "
-						},
-						{
-							"kind": "Content",
-							"text": "T"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "T"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!first:function(2)",
-					"canonicalReferenceGroup": "ts-prime!first"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
 							"text": "export declare function first<T>(): "
 						},
 						{
@@ -4291,7 +4252,7 @@
 							"text": ";"
 						}
 					],
-					"canonicalReference": "ts-prime!first:function(3)",
+					"canonicalReference": "ts-prime!first:function(2)",
 					"canonicalReferenceGroup": "ts-prime!first"
 				},
 				{
@@ -4322,7 +4283,7 @@
 							"text": ";"
 						}
 					],
-					"canonicalReference": "ts-prime!first:function(4)",
+					"canonicalReference": "ts-prime!first:function(3)",
 					"canonicalReferenceGroup": "ts-prime!first"
 				},
 				{

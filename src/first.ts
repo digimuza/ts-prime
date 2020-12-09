@@ -19,7 +19,6 @@ import { purry } from './purry';
  * @category Array, Pipe
  */
 export function first<T>(array: readonly T[]): T | undefined;
-export function first<T>(array: readonly T[], defaultValue: T): T;
 export function first<T>(): (array: readonly T[]) => T | undefined;
 export function first<T>(defaultValue: T): (array: readonly T[]) => T;
 
@@ -27,8 +26,8 @@ export function first() {
   return purry(_first, arguments, first.lazy);
 }
 
-function _first<T>(array: T[], defaultValue?: T ) {
-  return array[0] ?? defaultValue;
+function _first<T>(array: T[] ) {
+  return array[0];
 }
 
 export namespace first {

@@ -1,4 +1,4 @@
-![alt text](./logo.svg "ts-prime")
+![alt text](https://digimuza.github.io/ts-prime/logo.svg "ts-prime")
 ### The utility library designed <span style="color: #1890ff">for TypeScript<span>.
 
 [![Build Status](https://travis-ci.org/remeda/remeda.svg?branch=master)](https://travis-ci.org/remeda/remeda)
