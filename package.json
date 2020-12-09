@@ -1,6 +1,6 @@
 {
   "name": "ts-prime",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A utility library for JavaScript and Typescript.",
   "main": "dist/commonjs/index.js",
   "module": "dist/es/index.js",
@@ -11,7 +11,7 @@
     "jest": "^22.4.3",
     "marked": "^0.4.0",
     "prettier": "^2.0.1",
-    "ts-docflux": "^0.0.7",
+    "ts-docflux": "^0.0.8",
     "ts-jest": "^22.4.5",
     "ts-node": "^8.4.1",
     "typedoc": "0.11.1",
