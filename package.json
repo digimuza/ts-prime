@@ -18,6 +18,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
+    "prepublish": "yarn test",
     "test": "jest --coverage",
     "prettier": "prettier 'src/**/*.ts' --write",
     "build": "cd ./scripts && ./build.sh && yarn ts-docflux"

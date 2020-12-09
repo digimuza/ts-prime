@@ -3442,10 +3442,10 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-docflux@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/ts-docflux/-/ts-docflux-0.0.7.tgz#9d03181ef06934c88b106313a3580e397abef2d5"
-  integrity sha512-VlLUQAaq4SnV0s+EUJ1b5AzlwfbTj1o2mKBFeT/aea+Y8YUBW+Z2O2Jtu+6hE8IgqBW/3zvktk/OwEf1G3hDDQ==
+ts-docflux@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/ts-docflux/-/ts-docflux-0.0.8.tgz#84ede88c2f6d77e97c3d63813cb74a4c98112799"
+  integrity sha512-3dbMuYXJw7zUwc/xLw0PGjmWlTa8eFl0KYlC9+pHKfnyubILKvI651HEu0EH/Z8fsntHMjkH78YfkEVwlTiDKA==
   dependencies:
     "@microsoft/api-extractor" "^7.12.0"
     "@types/fs-extra" "^8.1.0"
