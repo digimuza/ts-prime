@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "@##TEMPLATE_URL##@/static/css/main.95416cce.chunk.css",
+    "main.js": "@##TEMPLATE_URL##@/static/js/main.edad6331.chunk.js",
+    "main.js.map": "@##TEMPLATE_URL##@/static/js/main.edad6331.chunk.js.map",
+    "runtime-main.js": "@##TEMPLATE_URL##@/static/js/runtime-main.6aa8f23e.js",
+    "runtime-main.js.map": "@##TEMPLATE_URL##@/static/js/runtime-main.6aa8f23e.js.map",
+    "static/css/2.947788f2.chunk.css": "@##TEMPLATE_URL##@/static/css/2.947788f2.chunk.css",
+    "static/js/2.1229644d.chunk.js": "@##TEMPLATE_URL##@/static/js/2.1229644d.chunk.js",
+    "static/js/2.1229644d.chunk.js.map": "@##TEMPLATE_URL##@/static/js/2.1229644d.chunk.js.map",
+    "static/js/3.3093c417.chunk.js": "@##TEMPLATE_URL##@/static/js/3.3093c417.chunk.js",
+    "static/js/3.3093c417.chunk.js.map": "@##TEMPLATE_URL##@/static/js/3.3093c417.chunk.js.map",
+    "index.html": "@##TEMPLATE_URL##@/index.html",
+    "static/css/2.947788f2.chunk.css.map": "@##TEMPLATE_URL##@/static/css/2.947788f2.chunk.css.map",
+    "static/css/main.95416cce.chunk.css.map": "@##TEMPLATE_URL##@/static/css/main.95416cce.chunk.css.map",
+    "static/js/2.1229644d.chunk.js.LICENSE.txt": "@##TEMPLATE_URL##@/static/js/2.1229644d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6aa8f23e.js",
+    "static/css/2.947788f2.chunk.css",
+    "static/js/2.1229644d.chunk.js",
+    "static/css/main.95416cce.chunk.css",
+    "static/js/main.edad6331.chunk.js"
+  ]
+}
