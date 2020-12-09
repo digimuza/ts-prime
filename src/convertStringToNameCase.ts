@@ -12,6 +12,10 @@ import { pipe } from './pipe';
  *    P.convertStringToNameCase(str, to);
  * @example
  *    P.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'PascalCase') // -> Super0BallCup
+ *    P.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'camelCase') // -> super0BallCup
+ *    P.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'snake_case') // -> super_0_ball_cup
+ *    P.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'kebab-case') // -> super-0-ball-cup
+ *    P.convertStringToNameCase("Super#@! ===-0- ball %%% cup", 'Train-Case') // -> Super-0-Ball-Cup
  * @category String
  */
 export function convertStringToNameCase(

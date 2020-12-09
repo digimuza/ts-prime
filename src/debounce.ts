@@ -4,7 +4,10 @@
  * https://css-tricks.com/debouncing-throttling-explained-examples/
  * @param func - Any provided function
  * @param debounceTimeMs - duration in milliseconds
- * @category Utility
+ * @example
+ *    const debouncedLog = P.debounce(console.log, 500)
+ *    debouncedLog("I will be printed only if 500ms ago this function was not called")
+ * @category Function
  */
 export function debounce<Input extends any[], R>(
   func: (...args: Input) => R,

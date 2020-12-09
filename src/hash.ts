@@ -5,7 +5,7 @@ import { base64encode } from './base64';
  * @param data - Hash content
  * @example 
  * P.hash("THIS IS AWESOME") //=> LTU1MjU4ODc4NQ
- * @category Utils
+ * @category Utility
  */
 export function hash(data: string | undefined): string {
   // tslint:disable

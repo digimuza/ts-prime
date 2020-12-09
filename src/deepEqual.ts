@@ -3,16 +3,37 @@ import { isFunction, isPromise, isArray, isObject } from './index';
 
 /**
  * Compares two values recursively.
+ * @warning Soft mode is relative expensive operation.
  * @description
  * The function has two modes `soft` and `hard` soft mode ignores array order hard mode preserves array order
+ *  - `Soft mode` ignore array order.
  * @param valueA - anything
  * @param valueB - anything
+ * @example
+ *    P.deepEquals({
+ *        data: 1,
+ *        super: [{ id: 1, name: "Tom" }, { id: 2, name: "Martin" }]
+ *    }, {
+ *        data: 1,
+ *        super: [{ id: 2, name: "Martin" }, { id: 1, name: "Tom" }]
+ *    }) // false super property is not equal
+ * 
+ *    P.deepEquals({
+ *        data: 1,
+ *        super: [{ id: 1, name: "Tom" }, { id: 2, name: "Martin" }]
+ *    }, {
+ *        data: 1,
+ *        super: [{ id: 2, name: "Martin" }, { id: 1, name: "Tom" }]
+ *    }, 'soft') // true Ignores array order
+ * 
+ *    
  * @param mode - array comparison mode
+ * @category Utility
  */
 export function deepEqual(
   valueA: unknown,
   valueB: unknown,
-  mode: 'soft' | 'hard' = 'soft'
+  mode: 'soft' | 'hard' = 'hard'
 ): boolean {
   const compare = (a: unknown, b: unknown) => {
     if (a === b) return true;

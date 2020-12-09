@@ -1,7 +1,9 @@
 
 /**
  * Return same value
- * @param value 
+ * @description
+ * Function that returns provided value
+ * @category Function
  */
 export function identity<T>(value: T) {
   return value;

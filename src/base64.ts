@@ -10,7 +10,9 @@ const keyStr =
 /**
  * Encode string with base64 encoding.
  * @signature
- *  P.base64encode(str)
+ *    P.base64encode(str)
+ * @example
+ *    P.base64encode("ts-prime is awesome") //=> dHMtcHJpbWUgaXMgYXdlc29tZQ==
  * @category Utility
  */
 export function base64encode(input: string): string {
@@ -43,7 +45,9 @@ export function base64encode(input: string): string {
 /**
  * Decode base64 encoded string.
  * @signature
- *  P.base64decode(str)
+ *    P.base64decode(str)
+ * @example
+ *    P.base64decode("dHMtcHJpbWUgaXMgYXdlc29tZQ==") //=> ts-prime is awesome
  * @category Utility
  */
 export function base64decode(input: string): string {

@@ -59,7 +59,17 @@ type DefinitelyBoolean<T> = Extract<T, boolean> extends never
   : Extract<T, boolean> extends any
   ? boolean
   : Extract<T, number>;
-
+  
+/**
+* Checks if `data` is boolean 
+* @param data - Anything
+* @example
+* const item = false as { data: number } | undefined | boolean
+* if (P.isBoolean(item)) {
+*    console.log(item.data)
+* }
+* @category Guard
+*/
 // @ts-ignore
 export function isBoolean<T>(data: T): data is DefinitelyBoolean<T> {
   return typeof data === 'boolean';
@@ -95,6 +105,7 @@ type DefinitelyArray<T extends unknown> = Extract<
 > extends never
   ? ReadonlyArray<unknown>
   : Extract<T, Array<any> | ReadonlyArray<any>>;
+
 
 /**
 * Checks if `data` is `array`. 

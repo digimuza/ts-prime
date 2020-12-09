@@ -1,10 +1,6 @@
 import { purry } from './purry';
 import { _reduceLazy, LazyResult } from './_reduceLazy';
 
-export function uniqBy<T, K>(
-  array: readonly T[],
-  transformer: (item: T) => K
-): T[];
 
 /**
  * Returns a new array containing only one copy of each element in the original list transformed by a function.
@@ -23,6 +19,10 @@ export function uniqBy<T, K>(
  *    ) // => [{n: 1}, {n: 2}, {n: 5}]
  * @category Array, Pipe
  */
+export function uniqBy<T, K>(
+  array: readonly T[],
+  transformer: (item: T) => K
+): T[];
 
 export function uniqBy<T, K>(
   transformer: (item: T) => K

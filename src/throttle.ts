@@ -4,7 +4,12 @@
  * You can find great article that explains how throttle works [here](https://css-tricks.com/debouncing-throttling-explained-examples/)
  * @param func - Any provided function
  * @param debounceTimeMs - duration in milliseconds
- * @category Utility
+ * @signature
+ *    P.throttle(func, throttleTimeMs)
+ * @example
+ *    // Execute log 
+ *    P.throttle(console.log, 1000)
+ * @category Function
  */
 export function throttle<Input extends any[], R>(
   func: (...args: Input) => R,

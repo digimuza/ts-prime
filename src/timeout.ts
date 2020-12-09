@@ -10,6 +10,9 @@ import { purry } from './purry';
  *    P.timeout(fn, milliseconds)
  * @signature
  *    P.timeout(milliseconds)(fn)
+ * @example
+ *    const req = P.timeout(request, 500)
+ *    req({ ... }) // Will throw if function executes longer than 500ms
  * @category Utility, Pipe
  */
 export function timeout<I extends any[], R>(
