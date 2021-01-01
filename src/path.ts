@@ -5,9 +5,9 @@ import { isObject, isArray } from './guards';
  * Gets the value at `path` of `object`
  * @param object the target object
  * @param path the path of the property to get
- * @signature 
+ * @signature
  *    P.path(object, path)
- * @signature 
+ * @signature
  *    P.path(path)(object)
  * @example
  *    P.path({x: { y: 1 }}, ['x', 'y']) // 1

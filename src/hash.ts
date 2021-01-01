@@ -3,7 +3,7 @@ import { base64encode } from './base64';
 /**
  * Non cryptographic quality hashing function
  * @param data - Hash content
- * @example 
+ * @example
  * P.hash("THIS IS AWESOME") //=> LTU1MjU4ODc4NQ
  * @category Utility
  */

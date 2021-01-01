@@ -1,13 +1,11 @@
-import { purry } from "./purry";
-
+import { purry } from './purry';
 
 function _isOneOf<T extends string | number | boolean>(
   value: string | number | boolean | undefined,
-  array: ReadonlyArray<T>,
+  array: ReadonlyArray<T>
 ): value is T {
   return typeof value !== 'undefined' && array.indexOf(value as T) !== -1;
 }
-
 
 /**
  * Checks if value is one of provided list
@@ -24,14 +22,11 @@ function _isOneOf<T extends string | number | boolean>(
  */
 export function isOneOf<T extends string | number | boolean>(
   value: string | number | boolean | undefined,
-  array: ReadonlyArray<T>,
-): value is T
+  array: ReadonlyArray<T>
+): value is T;
 export function isOneOf<T extends string | number | boolean>(
-  array: ReadonlyArray<T>,
-): (value: string | number | boolean | undefined) => value is T
+  array: ReadonlyArray<T>
+): (value: string | number | boolean | undefined) => value is T;
 export function isOneOf() {
-  return purry(_isOneOf, arguments)
+  return purry(_isOneOf, arguments);
 }
-
-
-

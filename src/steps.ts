@@ -13,5 +13,5 @@
  * @category Number
  */
 export function steps(value: number, step: number) {
-    return (value - value % step)
+  return value - (value % step);
 }

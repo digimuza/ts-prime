@@ -26,9 +26,9 @@ export function assertError<T>(data: T | Error): T {
  * Ensures that err is Error instance
  * @signature
  *    P.ensureError(any)
- * @example 
+ * @example
  *    const request = doRequest().catch(P.ensureError)
- *    if (P.isError(request)) return 
+ *    if (P.isError(request)) return
  * @category Utility
  */
 export function ensureError(err: unknown): Error {
@@ -47,9 +47,9 @@ export type CanGetError<T> = Error | T;
  *    if (P.isError(err)) {
  *        console.log(err)
  *    }
- * 
- * 
- *    const request = await canFail(() => axios.get(url)) 
+ *
+ *
+ *    const request = await canFail(() => axios.get(url))
  *    if (P.isError(request)) return
  * @category Utility
  */

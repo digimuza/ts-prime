@@ -12,7 +12,7 @@ import { purry } from './purry';
  *    P.clamp(10, { min: 20 }) // => 20
  *    P.clamp(10, { max: 5 }) // => 5
  *    P.clamp(10, { max: 20, min: 5 }) // => 10
- * 
+ *
  *    P.clamp({ min: 20 })(10) // => 20
  *    P.clamp({ max: 5 })(10) // => 5
  *    P.clamp({ max: 20, min: 5 })(10) // => 10

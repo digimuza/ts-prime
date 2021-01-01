@@ -13,7 +13,6 @@ export function toPairs<T extends { [k: string]: unknown }>(
   return Object.entries(object) as ReadonlyArray<[keyof T, T[keyof T]]>;
 }
 
-
 /**
  * Construct object from tuple array
  * @param data - List of tuples

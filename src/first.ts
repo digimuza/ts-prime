@@ -26,7 +26,7 @@ export function first() {
   return purry(_first, arguments, first.lazy);
 }
 
-function _first<T>(array: T[] ) {
+function _first<T>(array: T[]) {
   return array[0];
 }
 

@@ -23,11 +23,11 @@ import * as P from "ts-prime"; // tree-shaking supported!
 
 ## Why ts-prime?
 
-There are no universal utility libraries that fits my development need. Most of development libraries did had function that I needed in day to day development.
+There are no universal utility libraries that fits my development need. Most of the development libraries did had function that I needed in day to day development.
 
 ## ts-prime Design Goals
 
-1. The usage must be programmer friendly, and that's more important than following XYZ paradigm strictly.
+1. The usage must be programmer-friendly, and that's more important than following the XYZ paradigm strictly.
 2. Manual annotation should never be required, and proper typings should infer everything. The only exception is the first function in `createPipe`.
 3. E6 polyfill is required. Core methods are reused, and data structure (like Map/Set) are not re-implemented.
 4. The implementation of each function should be as minimal as possible. Tree-shaking is supported by default. (Do you know that `lodash.keyBy` has 14KB after minification?)

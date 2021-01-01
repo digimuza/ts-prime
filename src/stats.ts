@@ -13,8 +13,8 @@ export interface Stats {
 
 function _stats<X>(data: ReadonlyArray<X>, fn?: (q: X) => number): Stats {
   const dfFn = (data: X) => {
-    return data as unknown as number
-  }
+    return (data as unknown) as number;
+  };
   const numbers = data.map(fn || dfFn);
   function calcMedian(values: ReadonlyArray<number>) {
     if (values.length === 0) return 0;
@@ -64,8 +64,6 @@ export function stats<T>(
   fn: (item: T) => number
 ): (array: readonly T[]) => Stats;
 
-
 export function stats() {
   return purry(_stats, arguments);
 }
-

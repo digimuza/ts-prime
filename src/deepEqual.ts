@@ -17,7 +17,7 @@ import { isFunction, isPromise, isArray, isObject } from './index';
  *        data: 1,
  *        super: [{ id: 2, name: "Martin" }, { id: 1, name: "Tom" }]
  *    }) // false super property is not equal
- * 
+ *
  *    P.deepEquals({
  *        data: 1,
  *        super: [{ id: 1, name: "Tom" }, { id: 2, name: "Martin" }]
@@ -25,8 +25,8 @@ import { isFunction, isPromise, isArray, isObject } from './index';
  *        data: 1,
  *        super: [{ id: 2, name: "Martin" }, { id: 1, name: "Tom" }]
  *    }, 'soft') // true Ignores array order
- * 
- *    
+ *
+ *
  * @param mode - array comparison mode
  * @category Utility
  */

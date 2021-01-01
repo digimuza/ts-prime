@@ -33,7 +33,9 @@ function _timeout<I extends any[], R>(
     return Promise.race([
       new Promise<Error>(resolve => {
         setTimeout(() => {
-          resolve(new Error(`${fn.name} timeout after ${maxDuration}ms`));
+          resolve(
+            new Error(`${fn.name} timeout after ${maxDuration}ms`.trim())
+          );
         }, maxDuration);
       }),
       fn(...args),

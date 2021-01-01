@@ -5,15 +5,15 @@ type DefinitelyString<T> = Extract<T, string> extends never
   : Extract<T, string>;
 
 /**
-* Checks if `data` is `Number` 
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | string
-* if (P.isString(item)) {
-*    console.log("My name is", item)
-* }
-* @category Guard
-*/
+ * Checks if `data` is `Number`
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | string
+ * if (P.isString(item)) {
+ *    console.log("My name is", item)
+ * }
+ * @category Guard
+ */
 // @ts-ignore
 export function isString<T>(data: T): data is DefinitelyString<T> {
   return typeof data === 'string';
@@ -26,30 +26,30 @@ type DefinitelyNumber<T> = Extract<T, number> extends never
   : Extract<T, number>;
 
 /**
-* Checks if `data` is `Number` 
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | number
-* if (P.isNumber(item)) {
-*    console.log("My phone number is", item)
-* }
-* @category Guard
-*/
+ * Checks if `data` is `Number`
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | number
+ * if (P.isNumber(item)) {
+ *    console.log("My phone number is", item)
+ * }
+ * @category Guard
+ */
 // @ts-ignore
 export function isNumber<T>(data: T): data is DefinitelyNumber<T> {
   return typeof data === 'number' && !isNaN(data);
 }
 
 /**
-* Checks if `data` is defined 
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | undefined
-* if (P.isDefined(item)) {
-*    console.log(item.data)
-* }
-* @category Guard
-*/
+ * Checks if `data` is defined
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | undefined
+ * if (P.isDefined(item)) {
+ *    console.log(item.data)
+ * }
+ * @category Guard
+ */
 export function isDefined<T>(data: T): data is NonNullable<T> {
   return typeof data !== 'undefined' && data !== null;
 }
@@ -59,17 +59,17 @@ type DefinitelyBoolean<T> = Extract<T, boolean> extends never
   : Extract<T, boolean> extends any
   ? boolean
   : Extract<T, number>;
-  
+
 /**
-* Checks if `data` is boolean 
-* @param data - Anything
-* @example
-* const item = false as { data: number } | undefined | boolean
-* if (P.isBoolean(item)) {
-*    console.log(item.data)
-* }
-* @category Guard
-*/
+ * Checks if `data` is boolean
+ * @param data - Anything
+ * @example
+ * const item = false as { data: number } | undefined | boolean
+ * if (P.isBoolean(item)) {
+ *    console.log(item.data)
+ * }
+ * @category Guard
+ */
 // @ts-ignore
 export function isBoolean<T>(data: T): data is DefinitelyBoolean<T> {
   return typeof data === 'boolean';
@@ -83,17 +83,17 @@ type DefinitelyPromise<T extends unknown> = Extract<
   : Extract<T, Promise<any>>;
 
 /**
-* Checks if `data` is `Promise`. 
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | Promise<string[]>
-* if (P.isPromise(item)) {
-*    const result = await item
-*    console.log(Promise resolved,result.map((q)=> q.match(/.../)))
-* }
-* // Item is not promise
-* @category Guard
-*/
+ * Checks if `data` is `Promise`.
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | Promise<string[]>
+ * if (P.isPromise(item)) {
+ *    const result = await item
+ *    console.log(Promise resolved,result.map((q)=> q.match(/.../)))
+ * }
+ * // Item is not promise
+ * @category Guard
+ */
 // @ts-ignore
 export function isPromise<T>(data: T): data is DefinitelyPromise<T> {
   return data instanceof Promise;
@@ -106,19 +106,18 @@ type DefinitelyArray<T extends unknown> = Extract<
   ? ReadonlyArray<unknown>
   : Extract<T, Array<any> | ReadonlyArray<any>>;
 
-
 /**
-* Checks if `data` is `array`. 
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | string[]
-* if (P.isArray(item)) {
-*    console.log(item.map((q)=> q.match(/.../)))
-* }
-* 
-* const items = [{ data: 1 },[],"1",4,P.clamp].filter(P.isArray) //=> ["1"]
-* @category Guard
-*/
+ * Checks if `data` is `array`.
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | string[]
+ * if (P.isArray(item)) {
+ *    console.log(item.map((q)=> q.match(/.../)))
+ * }
+ *
+ * const items = [{ data: 1 },[],"1",4,P.clamp].filter(P.isArray) //=> ["1"]
+ * @category Guard
+ */
 export function isArray<T extends unknown>(
   data: T
   // @ts-ignore
@@ -133,20 +132,19 @@ type DefinitelyObject<T extends unknown> = Exclude<
   ? { [k: string]: unknown }
   : Exclude<Extract<T, object>, Array<any> | Function | ReadonlyArray<any>>;
 
-
 /**
-* Checks if `data` is `object`. 
-* @warning This function does not treat `Array` as `object`
-* @param data - Anything
-* @example
-* const item = { data: 1 } as { data: number } | string[]
-* if (P.isObject(item)) {
-*    console.log(item.data)
-* }
-* 
-* const items = [{ data: 1 },[],1,4,P.clamp].filter(P.isObject) //=> [{ data: 1 }]
-* @category Guard
-*/
+ * Checks if `data` is `object`.
+ * @warning This function does not treat `Array` as `object`
+ * @param data - Anything
+ * @example
+ * const item = { data: 1 } as { data: number } | string[]
+ * if (P.isObject(item)) {
+ *    console.log(item.data)
+ * }
+ *
+ * const items = [{ data: 1 },[],1,4,P.clamp].filter(P.isObject) //=> [{ data: 1 }]
+ * @category Guard
+ */
 export function isObject<T extends unknown>(
   data: T
   // @ts-ignore
@@ -159,18 +157,18 @@ type DefinitelyFunction<T> = Extract<T, Function> extends never
   : Extract<T, Function>;
 
 /**
-* Checks if `data` is `function`
-* @param data - Anything
-* @example
-* const item = P.clamp as unknown
-* if (P.isNil(item)) {
-*    // Item is definitely function 
-*    console.log('Nice function', item.name)
-* }
-* 
-* const items = [1,2,3,4,P.clamp].filter(P.isFunction) //=> [P.clamp]
-* @category Guard
-*/
+ * Checks if `data` is `function`
+ * @param data - Anything
+ * @example
+ * const item = P.clamp as unknown
+ * if (P.isNil(item)) {
+ *    // Item is definitely function
+ *    console.log('Nice function', item.name)
+ * }
+ *
+ * const items = [1,2,3,4,P.clamp].filter(P.isFunction) //=> [P.clamp]
+ * @category Guard
+ */
 // @ts-ignore
 export function isFunction<T>(data: T): data is DefinitelyFunction<T> {
   return typeof data === 'function';
@@ -182,10 +180,10 @@ export function isFunction<T>(data: T): data is DefinitelyFunction<T> {
  * @example
  * const item = undefined as unknown
  * if (P.isNil(item)) {
- *    // Item is definitely null | undefined 
+ *    // Item is definitely null | undefined
  *    console.log('Do something')
  * }
- * 
+ *
  * const items = [1,2,3,4,undefined].filter(P.isNil) //=> [undefined]
  * @category Guard
  */
@@ -206,9 +204,9 @@ type DefinitelyError<T> = Extract<T, Error> extends never
  *    // This is definitely an error and Typescript resolves it
  *    console.log(item.message)
  * }
- * 
+ *
  * const items = [1,2,3,4,new Error('Error')].filter(P.isError) //=> [new Error('Error')]
- * @category Guard 
+ * @category Guard
  */
 // @ts-ignore
 export function isError<T>(data: T): data is DefinitelyError<T> {
@@ -227,7 +225,7 @@ type DefinitelyDate<T> = Extract<T, Date> extends never
  * if (P.isDate(item)) {
  *    // This is definitely an Date
  * }
- * 
+ *
  * const items = [1,2,3,4,new Date()].filter(P.isDate) //=> [new Date()]
  * @category Guard
  */
@@ -239,8 +237,8 @@ export function isDate<T>(data: T): data is DefinitelyDate<T> {
 /**
  * Inverse predicate
  * @param predicate - predicate function
- * @example 
- * const data = [new Error('sample'), 1, 2].filter(P.isNot(P.isError)) // [1,2] 
+ * @example
+ * const data = [new Error('sample'), 1, 2].filter(P.isNot(P.isError)) // [1,2]
  * @category Guard
  */
 export function isNot<T, S>(
@@ -251,5 +249,25 @@ export function isNot<T>(predicate: (data: T) => any): (data: T) => boolean;
 export function isNot<T>(predicate: (data: T) => any) {
   return (data: T) => {
     return !predicate(data);
+  };
+}
+
+/**
+ * Inverse predicate
+ * @param predicate - predicate function
+ * @example
+ * const data = [new Error('sample'), 1, 2].filter(P.isNot(P.isError)) // [1,2]
+ * @category Guard
+ */
+export function haveKeys<K extends string>(
+  keys: ReadonlyArray<K>
+): <T extends { [k: string]: unknown }>(
+  data: T
+) => data is T & { [k in K]: NonNullable<T[k]> };
+export function haveKeys<K extends string>(keys: ReadonlyArray<K>) {
+  return <T extends { [k: string]: unknown }>(data: T) => {
+    return keys.every(q => {
+      return isDefined(data[q]);
+    });
   };
 }

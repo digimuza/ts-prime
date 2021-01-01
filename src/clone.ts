@@ -57,7 +57,7 @@ function _clone(value: any, refFrom: any[], refTo: any[], deep: boolean) {
 export function clone<T extends any>(value: T): T {
   // @ts-ignore
   return value != null && typeof value.clone === 'function'
-  // @ts-ignore
-    ? value.clone()
+    ? // @ts-ignore
+      value.clone()
     : _clone(value, [], [], true);
 }

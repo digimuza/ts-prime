@@ -8,7 +8,7 @@ import { delay } from './delay';
  * @param fn - The function to invoke.
  * @param maxDurationMs - Max waiting duration
  * @example
- * const result = await waitUntilDefined(() => document.body.getElementById("#app")) 
+ * const result = await waitUntilDefined(() => document.body.getElementById("#app"))
  * @category Utility
  * @throws If if fn does not return not nil value in given time frame
  */

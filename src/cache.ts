@@ -1,5 +1,4 @@
 import { hash } from './hash';
-import { purry } from './purry';
 
 export interface CacheMechanism<R> {
   set: (key: string, data: R) => void;
@@ -28,13 +27,7 @@ export function cache<I extends (...args: any[]) => any>(
   fn: I,
   options?: CacheOptions<ArgsType<I>, ReturnType<I>>
 ): I;
-export function cache<I extends (...args: any[]) => any>(
-  options?: CacheOptions<ArgsType<I>, ReturnType<I>>
-): (fn: I) => I;
-export function cache() {
-  return purry(_cache, arguments);
-}
-function _cache<I extends any[], R>(
+export function cache<I extends any[], R>(
   fn: (...args: I) => R,
   options?: CacheOptions<I, R>
 ): (...args: I) => R {

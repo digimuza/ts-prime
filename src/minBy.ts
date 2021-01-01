@@ -17,13 +17,8 @@ import { sortBy } from './sortBy';
  *    P.minBy([{ data: 5, score: 2 }, { data: 6, score: 5 }], (q) => q.data * q.score) //=> [{ data: 5, score: 2 }]
  * @category Number, Pipe
  */
-export function minBy(
-  array: readonly number[],
-): number[];
-export function minBy<T>(
-  array: readonly T[],
-  fn: (item: T) => number
-): T[];
+export function minBy(array: readonly number[]): number[];
+export function minBy<T>(array: readonly T[], fn: (item: T) => number): T[];
 export function minBy(): (array: readonly number[]) => number[];
 export function minBy<T>(fn: (item: T) => number): (array: readonly T[]) => T[];
 
@@ -68,13 +63,8 @@ function _minBy<T>(array: readonly T[], fn: (item: T) => number): T[] {
  *    P.maxBy([{ data: 5, score: 2 }, { data: 6, score: 5 }], (q) => q.data * q.score) //=> [{ data: 6, score: 5 }]
  * @category Number
  */
-export function maxBy(
-  array: readonly number[]
-): number[];
-export function maxBy<T>(
-  array: readonly T[],
-  fn: (item: T) => number
-): T[];
+export function maxBy(array: readonly number[]): number[];
+export function maxBy<T>(array: readonly T[], fn: (item: T) => number): T[];
 
 export function maxBy<T>(fn: (item: T) => number): (array: readonly T[]) => T[];
 export function maxBy(): (array: readonly number[]) => number[];
@@ -83,7 +73,7 @@ export function maxBy() {
   return purry(_maxBy, arguments);
 }
 function _maxBy<T>(array: readonly T[], fn?: (item: T) => number): T[] {
-  const def = fn || ((q: T) => Number(q)) 
+  const def = fn || ((q: T) => Number(q));
   const items = sortBy(array, q => -1 * def(q));
   const minArr: T[] = [];
   let maxV: number = 0;

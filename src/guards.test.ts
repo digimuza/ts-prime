@@ -11,6 +11,7 @@ import {
   isObject,
   isPromise,
   isNot,
+  haveKeys,
 } from './guards';
 
 type TestObj =
@@ -54,7 +55,7 @@ const dataProvider = (
     case 'date':
       return new Date();
     case 'function':
-      return () => { };
+      return () => {};
     case 'null':
       return null;
     case 'promise':
@@ -220,8 +221,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-          a: string;
-        }
+            a: string;
+          }
         | (() => void)
         | number[]
         | Date
@@ -313,8 +314,8 @@ describe('Describe guards behavior', () => {
       expect(typeof data).toEqual('object');
       assertType<
         | {
-          a: string;
-        }
+            a: string;
+          }
         | Date
         | Error
         | Promise<number>
@@ -323,7 +324,7 @@ describe('Describe guards behavior', () => {
   });
 
   test('isObject: should work as type guard', () => {
-    const data = { data: 5 } as (ReadonlyArray<number> | { data: number });
+    const data = { data: 5 } as ReadonlyArray<number> | { data: number };
     if (isObject(data)) {
       expect(typeof data).toEqual('object');
       assertType<{ data: number }>(data);
@@ -331,7 +332,7 @@ describe('Describe guards behavior', () => {
   });
 
   test('isObject: should work as type guard', () => {
-    const data = { data: 5 } as (Array<number> | { data: number });
+    const data = { data: 5 } as Array<number> | { data: number };
     if (isObject(data)) {
       expect(typeof data).toEqual('object');
       assertType<{ data: number }>(data);
@@ -353,8 +354,8 @@ describe('Describe guards behavior', () => {
     assertType<
       (
         | {
-          a: string;
-        }
+            a: string;
+          }
         | Date
         | Error
         | Promise<number>
@@ -380,6 +381,47 @@ describe('Describe guards behavior', () => {
     assertType<Promise<number>[]>(data);
   });
 
+  test('haveKeys: should work as type guard in filter', () => {
+    const data = [
+      {
+        x: 4,
+      },
+      {
+        a: 1,
+        b: 2,
+      },
+      {
+        a: 1,
+        b: 5,
+      },
+    ].filter(haveKeys(['a', 'b']));
+    expect(data).toEqual([
+      {
+        a: 1,
+        b: 2,
+      },
+      {
+        a: 1,
+        b: 5,
+      },
+    ]);
+    assertType<{ a: number; b: number }[]>(data);
+  });
+
+  test('haveKeys: should work as type guard in filter', () => {
+    const definedKeys = haveKeys(['a', 'b']);
+    const obj = {
+      x: 4,
+    };
+    if (definedKeys(obj)) {
+      assertType<{
+        x: number;
+        a: unknown;
+        b: unknown;
+      }>(obj);
+    }
+  });
+
   test('isNot: should work as type guard', () => {
     const data = dataProvider('promise');
     if (isNot(isString)(data)) {
@@ -387,8 +429,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-          a: string;
-        }
+            a: string;
+          }
         | (() => void)
         | number[]
         | Date

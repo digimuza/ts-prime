@@ -12,8 +12,8 @@
  *    P.last([1], 2) // => 1
  * @category Array
  */
-export function last<T>(array: readonly T[]): T | undefined
-export function last<T>(array: readonly T[], defaultValue: T): T 
+export function last<T>(array: readonly T[]): T | undefined;
+export function last<T>(array: readonly T[], defaultValue: T): T;
 export function last<T>(array: readonly T[], defaultValue?: T): T | undefined {
   return array[array.length - 1] || defaultValue;
 }

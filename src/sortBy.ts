@@ -26,7 +26,7 @@ export type SortByProp = SortValue | ComplexSort | (SortValue | ComplexSort)[];
  *      x => x.a
  *    )
  *    // => [{ a: 1 }, { a: 2 }, { a: 3 }, { a: 7 }]
- * 
+ *
  *    P.pipe(
  *      [{ a: 1 }, { a: 3 }, { a: 7 }, { a: 2 }],
  *      P.sortBy(x => x.a)

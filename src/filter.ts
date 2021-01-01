@@ -13,7 +13,7 @@ import { _toLazyIndexed } from './_toLazyIndexed';
  *    P.filter(fn)(array)
  * @example
  *    P.filter([1, 2, 3], x => x % 2 === 1) // => [1, 3]
- * 
+ *
  *    P.pipe([1, 2, 3], P.filter(x => x % 2 === 1)) // => [1, 3]
  * @category Array, Pipe
  */

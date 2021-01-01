@@ -615,68 +615,6 @@
 					],
 					"canonicalReference": "ts-prime!cache:function(1)",
 					"canonicalReferenceGroup": "ts-prime!cache"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function cache<I extends "
-						},
-						{
-							"kind": "Content",
-							"text": "(...args: any[]) => any"
-						},
-						{
-							"kind": "Content",
-							"text": ">(options?: "
-						},
-						{
-							"kind": "Reference",
-							"text": "CacheOptions",
-							"canonicalReference": "ts-prime!CacheOptions:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<"
-						},
-						{
-							"kind": "Reference",
-							"text": "ArgsType",
-							"canonicalReference": "ts-prime!ArgsType:type"
-						},
-						{
-							"kind": "Content",
-							"text": "<I>, "
-						},
-						{
-							"kind": "Reference",
-							"text": "ReturnType",
-							"canonicalReference": "!ReturnType:type"
-						},
-						{
-							"kind": "Content",
-							"text": "<I>>"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "(fn: I) => I"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!cache:function(2)",
-					"canonicalReferenceGroup": "ts-prime!cache"
 				}
 			],
 			"kind": "Function",
@@ -5551,6 +5489,98 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Inverse predicate",
+						"example": "const data = [new Error('sample'), 1, 2].filter(P.isNot(P.isError)) // [1,2]",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "predicate function",
+									"name": "predicate"
+								}
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Guard"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function haveKeys<K extends "
+						},
+						{
+							"kind": "Content",
+							"text": "string"
+						},
+						{
+							"kind": "Content",
+							"text": ">(keys: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<K>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "<T extends {\n    [k: string]: unknown;\n}>(data: T) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "data",
+							"canonicalReference": "ts-prime!~data"
+						},
+						{
+							"kind": "Content",
+							"text": " is T & {\n    [k in K]: "
+						},
+						{
+							"kind": "Reference",
+							"text": "NonNullable",
+							"canonicalReference": "!NonNullable:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T[k]>;\n}"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!haveKeys:function(1)",
+					"canonicalReferenceGroup": "ts-prime!haveKeys"
+				}
+			],
+			"kind": "Function",
+			"name": "haveKeys",
+			"canonicalReference": "ts-prime!haveKeys:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!haveKeys",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Guard"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Return same value",
 						"parsed": [
 							{
@@ -7992,228 +8022,6 @@
 				{
 					"kind": "Function",
 					"comment": {
-						"description": "Merges a list of objects into a single object.",
-						"example": "P.mergeAll([{ a: 1, b: 1 }, { b: 2, c: 3 }, { d: 10 }]) // => { a: 1, b: 2, c: 3, d: 10 }",
-						"parsed": [
-							{
-								"tag": "@param",
-								"content": {
-									"description": "the array of objects",
-									"name": "array"
-								}
-							},
-							{
-								"tag": "@signature",
-								"content": [
-									"P.mergeAll(objects)"
-								]
-							},
-							{
-								"tag": "@category",
-								"content": [
-									"Array"
-								]
-							}
-						]
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll<A>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly [A]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "A"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(1)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll<A, B>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly [A, B]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "A & B"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(2)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll<A, B, C>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly [A, B, C]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "A & B & C"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(3)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll<A, B, C, D>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly [A, B, C, D]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "A & B & C & D"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(4)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll<A, B, C, D, E>(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "[A, B, C, D, E]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "A & B & C & D & E"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(5)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function mergeAll(array: "
-						},
-						{
-							"kind": "Content",
-							"text": "readonly object[]"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "object"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!mergeAll:function(6)",
-					"canonicalReferenceGroup": "ts-prime!mergeAll"
-				}
-			],
-			"kind": "Function",
-			"name": "mergeAll",
-			"canonicalReference": "ts-prime!mergeAll:function(1)",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!mergeAll",
-			"tags": [
-				{
-					"tag": "@category",
-					"value": "Array"
-				}
-			]
-		},
-		{
-			"members": [
-				{
-					"kind": "Function",
-					"comment": {
 						"description": "Returns a new array containing items that have maximum numeric values defined by `fn` function.",
 						"example": "P.minBy([1,2,3,4,5,6,7,7]) //=> [1]\nP.minBy([{ data: 5, score: 2 }, { data: 6, score: 5 }], (q) => q.data * q.score) //=> [{ data: 5, score: 2 }]",
 						"parsed": [
@@ -9878,402 +9686,6 @@
 					"value": "Array"
 				}
 			]
-		},
-		{
-			"members": [
-				{
-					"kind": "Variable",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "RETRY_STRATEGIES: "
-						},
-						{
-							"kind": "Content",
-							"text": "{\n    EXP: (options: {\n        retryOnError: (err: "
-						},
-						{
-							"kind": "Reference",
-							"text": "Error",
-							"canonicalReference": "!Error:interface"
-						},
-						{
-							"kind": "Content",
-							"text": ") => boolean;\n        retryCount: number;\n        retryDelay: number | ((count: number) => number);\n    }) => (args: "
-						},
-						{
-							"kind": "Reference",
-							"text": "RetryArgs",
-							"canonicalReference": "ts-prime!RetryArgs:interface"
-						},
-						{
-							"kind": "Content",
-							"text": ") => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<{\n        retry: boolean;\n        count: number;\n        err: "
-						},
-						{
-							"kind": "Reference",
-							"text": "Error",
-							"canonicalReference": "!Error:interface"
-						},
-						{
-							"kind": "Content",
-							"text": ";\n        startTime: number;\n        logger?: "
-						},
-						{
-							"kind": "Reference",
-							"text": "Partial",
-							"canonicalReference": "!Partial:type"
-						},
-						{
-							"kind": "Content",
-							"text": "<"
-						},
-						{
-							"kind": "Reference",
-							"text": "Pick",
-							"canonicalReference": "!Pick:type"
-						},
-						{
-							"kind": "Content",
-							"text": "<"
-						},
-						{
-							"kind": "Reference",
-							"text": "Console",
-							"canonicalReference": "!Console:interface"
-						},
-						{
-							"kind": "Content",
-							"text": ", \"warn\">> | undefined;\n    }>;\n}"
-						}
-					],
-					"canonicalReference": "ts-prime!RETRY_STRATEGIES:var",
-					"canonicalReferenceGroup": "ts-prime!RETRY_STRATEGIES"
-				}
-			],
-			"kind": "Variable",
-			"name": "RETRY_STRATEGIES",
-			"canonicalReference": "ts-prime!RETRY_STRATEGIES:var",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!RETRY_STRATEGIES",
-			"tags": []
-		},
-		{
-			"members": [
-				{
-					"kind": "Interface",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export interface RetryArgs "
-						}
-					],
-					"canonicalReference": "ts-prime!RetryArgs:interface",
-					"canonicalReferenceGroup": "ts-prime!RetryArgs"
-				}
-			],
-			"kind": "Interface",
-			"name": "RetryArgs",
-			"canonicalReference": "ts-prime!RetryArgs:interface",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!RetryArgs",
-			"tags": []
-		},
-		{
-			"members": [
-				{
-					"kind": "TypeAlias",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare type RetryFn = "
-						},
-						{
-							"kind": "Content",
-							"text": "(args: "
-						},
-						{
-							"kind": "Reference",
-							"text": "RetryArgs",
-							"canonicalReference": "ts-prime!RetryArgs:interface"
-						},
-						{
-							"kind": "Content",
-							"text": ") => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<"
-						},
-						{
-							"kind": "Reference",
-							"text": "RetryArgs",
-							"canonicalReference": "ts-prime!RetryArgs:interface"
-						},
-						{
-							"kind": "Content",
-							"text": " & {\n    retry: boolean;\n}>"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!RetryFn:type",
-					"canonicalReferenceGroup": "ts-prime!RetryFn"
-				}
-			],
-			"kind": "TypeAlias",
-			"name": "RetryFn",
-			"canonicalReference": "ts-prime!RetryFn:type",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!RetryFn",
-			"tags": []
-		},
-		{
-			"members": [
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "Function middleware that retry function if function crashes",
-						"example": "const request = (url: string) => axios.get(url)\nconst requestWithRetry = P.retryOnFail(request)",
-						"parsed": [
-							{
-								"tag": "@description",
-								"content": [
-									"By default `retryOnFail` function uses `RETRY_STRATEGIES.EXP` strategy this strategy tries maximum 5 times and after each retry delays `Math.pow(count",
-									"2) * 1000`"
-								]
-							},
-							{
-								"tag": "@param",
-								"content": {
-									"description": "target function",
-									"name": "fn"
-								}
-							},
-							{
-								"tag": "@param",
-								"content": {
-									"description": "additional retry options",
-									"name": "options"
-								}
-							},
-							{
-								"tag": "@signature",
-								"content": [
-									"const newFn = P.retryOnFail(fn)"
-								]
-							},
-							{
-								"tag": "@category",
-								"content": [
-									"Utility",
-									"Pipe"
-								]
-							}
-						]
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function retryOnFail<I extends "
-						},
-						{
-							"kind": "Content",
-							"text": "any[]"
-						},
-						{
-							"kind": "Content",
-							"text": ", R>(fn: "
-						},
-						{
-							"kind": "Content",
-							"text": "(...args: I) => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<R>"
-						},
-						{
-							"kind": "Content",
-							"text": ", options?: "
-						},
-						{
-							"kind": "Reference",
-							"text": "RetryOnFailArgs",
-							"canonicalReference": "ts-prime!RetryOnFailArgs:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "(...args: I) => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<R>"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!retryOnFail:function(1)",
-					"canonicalReferenceGroup": "ts-prime!retryOnFail"
-				},
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "",
-						"parsed": []
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function retryOnFail<I extends "
-						},
-						{
-							"kind": "Content",
-							"text": "any[]"
-						},
-						{
-							"kind": "Content",
-							"text": ", R>(options?: "
-						},
-						{
-							"kind": "Reference",
-							"text": "RetryOnFailArgs",
-							"canonicalReference": "ts-prime!RetryOnFailArgs:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "(fn: (...args: I) => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<R>) => (...args: I) => "
-						},
-						{
-							"kind": "Reference",
-							"text": "Promise",
-							"canonicalReference": "!Promise:interface"
-						},
-						{
-							"kind": "Content",
-							"text": "<R>"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!retryOnFail:function(2)",
-					"canonicalReferenceGroup": "ts-prime!retryOnFail"
-				}
-			],
-			"kind": "Function",
-			"name": "retryOnFail",
-			"canonicalReference": "ts-prime!retryOnFail:function(1)",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!retryOnFail",
-			"tags": [
-				{
-					"tag": "@category",
-					"value": "Utility"
-				},
-				{
-					"tag": "@category",
-					"value": "Pipe"
-				}
-			]
-		},
-		{
-			"members": [
-				{
-					"kind": "Interface",
-					"comment": {
-						"description": "retryOnFail function args",
-						"parsed": [
-							{
-								"tag": "@param",
-								"content": {
-									"description": "Retry strategy function",
-									"name": "retryStrategy"
-								}
-							},
-							{
-								"tag": "@param",
-								"content": {
-									"description": "Optional logger",
-									"name": "logger"
-								}
-							}
-						]
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export interface RetryOnFailArgs "
-						}
-					],
-					"canonicalReference": "ts-prime!RetryOnFailArgs:interface",
-					"canonicalReferenceGroup": "ts-prime!RetryOnFailArgs"
-				}
-			],
-			"kind": "Interface",
-			"name": "RetryOnFailArgs",
-			"canonicalReference": "ts-prime!RetryOnFailArgs:interface",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!RetryOnFailArgs",
-			"tags": []
 		},
 		{
 			"members": [
@@ -12082,6 +11494,129 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Parses date and if success returns Date object otherwise returns undefined",
+						"example": "P.toFloat(\"1.378998\") // = 1.378998\nP.toFloat(\"test\") // undefined\nP.toFloat(\"test\", 0) // 0",
+						"parsed": [
+							{
+								"tag": "@description",
+								"content": [
+									"If for example we want parse data new Date(\"asd\") this will be invalid date and javascript will not return exception. So for every date parsing we need to do additional validity checks"
+								]
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Anything",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Number"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function toDate(data: "
+						},
+						{
+							"kind": "Content",
+							"text": "string | number | "
+						},
+						{
+							"kind": "Reference",
+							"text": "Date",
+							"canonicalReference": "!Date:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Reference",
+							"text": "Date",
+							"canonicalReference": "!Date:interface"
+						},
+						{
+							"kind": "Content",
+							"text": " | undefined"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!toDate:function(1)",
+					"canonicalReferenceGroup": "ts-prime!toDate"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function toDate(data: "
+						},
+						{
+							"kind": "Content",
+							"text": "string | number | "
+						},
+						{
+							"kind": "Reference",
+							"text": "Date",
+							"canonicalReference": "!Date:interface"
+						},
+						{
+							"kind": "Content",
+							"text": ", defaultValue: "
+						},
+						{
+							"kind": "Reference",
+							"text": "Date",
+							"canonicalReference": "!Date:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Reference",
+							"text": "Date",
+							"canonicalReference": "!Date:interface"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!toDate:function(2)",
+					"canonicalReferenceGroup": "ts-prime!toDate"
+				}
+			],
+			"kind": "Function",
+			"name": "toDate",
+			"canonicalReference": "ts-prime!toDate:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!toDate",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Number"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Parses string to `floating` number",
 						"example": "P.toFloat(\"1.378998\") // = 1.378998\nP.toFloat(\"test\") // undefined\nP.toFloat(\"test\", 0) // 0",
 						"parsed": [
@@ -12384,67 +11919,6 @@
 				{
 					"tag": "@category",
 					"value": "Object"
-				}
-			]
-		},
-		{
-			"members": [
-				{
-					"kind": "Function",
-					"comment": {
-						"description": "Converts data to string",
-						"example": "P.toString({ data: 55 }) //=> [object Object]",
-						"parsed": [
-							{
-								"tag": "@param",
-								"content": {
-									"description": "Anything",
-									"name": "data"
-								}
-							},
-							{
-								"tag": "@category",
-								"content": [
-									"String"
-								]
-							}
-						]
-					},
-					"excerptTokens": [
-						{
-							"kind": "Content",
-							"text": "export declare function toString(data: "
-						},
-						{
-							"kind": "Content",
-							"text": "unknown"
-						},
-						{
-							"kind": "Content",
-							"text": "): "
-						},
-						{
-							"kind": "Content",
-							"text": "string"
-						},
-						{
-							"kind": "Content",
-							"text": ";"
-						}
-					],
-					"canonicalReference": "ts-prime!toString:function(1)",
-					"canonicalReferenceGroup": "ts-prime!toString"
-				}
-			],
-			"kind": "Function",
-			"name": "toString",
-			"canonicalReference": "ts-prime!toString:function(1)",
-			"package": "ts-prime",
-			"canonicalReferenceGroup": "ts-prime!toString",
-			"tags": [
-				{
-					"tag": "@category",
-					"value": "String"
 				}
 			]
 		},
@@ -12929,6 +12403,6 @@
 		}
 	],
 	"articles": {
-		"readme": "![alt text](./logo.svg \"ts-prime\")\n### The utility library designed <span style=\"color: #1890ff\">for TypeScript<span>.\n\n[![Build Status](https://travis-ci.org/remeda/remeda.svg?branch=master)](https://travis-ci.org/remeda/remeda)\n[![npm module](https://badge.fury.io/js/ts-prime.svg)](https://www.npmjs.org/package/ts-prime)\n[![dependencies](https://david-dm.org/digimuza/ts-prime/status.svg)](https://david-dm.org/digimuza/ts-prime)\n\n## Installation\n\n```bash\nnpm i ts-prime\n```\n\n```bash\nyarn add ts-prime\n```\n\nThen in .js or .ts\n\n```typescript\nimport * as P from \"ts-prime\"; // tree-shaking supported!\n```\n\n## Why ts-prime?\n\nThere are no universal utility libraries that fits my development need. Most of development libraries did had function that I needed in day to day development.\n\n## ts-prime Design Goals\n\n1. The usage must be programmer friendly, and that's more important than following XYZ paradigm strictly.\n2. Manual annotation should never be required, and proper typings should infer everything. The only exception is the first function in `createPipe`.\n3. E6 polyfill is required. Core methods are reused, and data structure (like Map/Set) are not re-implemented.\n4. The implementation of each function should be as minimal as possible. Tree-shaking is supported by default. (Do you know that `lodash.keyBy` has 14KB after minification?)\n5. All functions are immutable, and there are no side-effects.\n6. Fixed number of arguments.\n7. Designed with typescript limitations in mind\n\nMIT"
+		"readme": "![alt text](https://digimuza.github.io/ts-prime/logo.svg \"ts-prime\")\n### The utility library designed <span style=\"color: #1890ff\">for TypeScript<span>.\n\n[![Build Status](https://travis-ci.org/remeda/remeda.svg?branch=master)](https://travis-ci.org/remeda/remeda)\n[![npm module](https://badge.fury.io/js/ts-prime.svg)](https://www.npmjs.org/package/ts-prime)\n[![dependencies](https://david-dm.org/digimuza/ts-prime/status.svg)](https://david-dm.org/digimuza/ts-prime)\n\n## Installation\n\n```bash\nnpm i ts-prime\n```\n\n```bash\nyarn add ts-prime\n```\n\nThen in .js or .ts\n\n```typescript\nimport * as P from \"ts-prime\"; // tree-shaking supported!\n```\n\n## Why ts-prime?\n\nThere are no universal utility libraries that fits my development need. Most of the development libraries did had function that I needed in day to day development.\n\n## ts-prime Design Goals\n\n1. The usage must be programmer-friendly, and that's more important than following the XYZ paradigm strictly.\n2. Manual annotation should never be required, and proper typings should infer everything. The only exception is the first function in `createPipe`.\n3. E6 polyfill is required. Core methods are reused, and data structure (like Map/Set) are not re-implemented.\n4. The implementation of each function should be as minimal as possible. Tree-shaking is supported by default. (Do you know that `lodash.keyBy` has 14KB after minification?)\n5. All functions are immutable, and there are no side-effects.\n6. Fixed number of arguments.\n7. Designed with typescript limitations in mind\n\nMIT"
 	}
 }

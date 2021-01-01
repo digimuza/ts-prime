@@ -16,7 +16,7 @@ import { purry } from './purry';
  *    P.times(5, fn)
  * @signature
  *    P.times(fn)(count)
- * @example 
+ * @example
  *  P.times(identity, 5); //=> [0, 1, 2, 3, 4]
  * @category Utility, Pipe
  */

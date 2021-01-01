@@ -10,7 +10,7 @@ import { purry } from './purry';
  *    P.omit(names)(obj);
  * @example
  *    P.omit({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { b: 2, c: 3 }
- * 
+ *
  *    P.pipe({ a: 1, b: 2, c: 3, d: 4 }, P.omit(['a', 'd'])) // => { b: 2, c: 3 }
  * @category Object, Pipe
  */

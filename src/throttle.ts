@@ -7,7 +7,7 @@
  * @signature
  *    P.throttle(func, throttleTimeMs)
  * @example
- *    // Execute log 
+ *    // Execute log
  *    P.throttle(console.log, 1000)
  * @category Function
  */

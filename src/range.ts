@@ -4,9 +4,9 @@ import { purry } from './purry';
  * Returns a list of numbers from `start` (inclusive) to `end` (exclusive).
  * @param start the start number
  * @param end the end number
- * @signature 
+ * @signature
  *    P.range(start, end)
- * @signature 
+ * @signature
  *    P.range(end)(start)
  * @example
  *    P.range(1, 5) // => [1, 2, 3, 4]

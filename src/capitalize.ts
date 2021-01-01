@@ -4,7 +4,7 @@
  * @signature
  *  P.capitalize(str)
  * @example
- *  P.capitalize("tom") //=> Tom 
+ *  P.capitalize("tom") //=> Tom
  * @category String
  */
 export function capitalize(str: string): string {
