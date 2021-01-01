@@ -1277,6 +1277,96 @@
 		{
 			"members": [
 				{
+					"kind": "Function",
+					"comment": {
+						"description": "Removes all undefined and null values from object recursively",
+						"example": "P.compact({foo: undefined}) // {}",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the object to compact",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.compact(value)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Object"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function compact<T>(data: "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!compact:function(1)",
+					"canonicalReferenceGroup": "ts-prime!compact"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function compact<T>(): "
+						},
+						{
+							"kind": "Content",
+							"text": "(data: T) => T"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!compact:function(2)",
+					"canonicalReferenceGroup": "ts-prime!compact"
+				}
+			],
+			"kind": "Function",
+			"name": "compact",
+			"canonicalReference": "ts-prime!compact:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!compact",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Object"
+				}
+			]
+		},
+		{
+			"members": [
+				{
 					"kind": "TypeAlias",
 					"comment": {
 						"description": "",
