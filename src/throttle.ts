@@ -11,7 +11,17 @@
  *    P.throttle(console.log, 1000)
  * @category Function
  */
-export function throttle<Input extends any[], R>(
+
+import { purry } from "./purry";
+
+export function throttle<E extends (...args: any[]) => any>(func: E, throttleTimeMs: number): E 
+export function throttle<E extends (...args: any[]) => any>(throttleTimeMs: number): (func: E) => E 
+export function throttle() {
+  return purry(__throttle, arguments)
+}
+
+
+function __throttle<Input extends any[], R>(
   func: (...args: Input) => R,
   throttleTimeMs: number
 ): (...args: Input) => R {

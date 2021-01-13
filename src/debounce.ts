@@ -1,3 +1,4 @@
+import { purry } from "./purry";
 /**
  * The Debounce technique allow us to “group” multiple sequential calls in a single one.
  * @description
@@ -9,14 +10,21 @@
  *    debouncedLog("I will be printed only if 500ms ago this function was not called")
  * @category Function
  */
-export function debounce<Input extends any[], R>(
-  func: (...args: Input) => R,
+
+export function debounce<E extends (...args: any[]) => any>(debounceTimeMs: number): (func: E) => E
+export function debounce<E extends (...args: any[]) => any>(func: E, debounceTimeMs: number): E
+export function debounce() {
+  return purry(__debounce, arguments)
+}
+
+function __debounce<E extends (...args: any[]) => any>(
+  func: E,
   debounceTimeMs: number
-): (...args: Input) => R {
+): E {
   // tslint:disable: no-let
-  let result: { readonly r: R } | null = null;
+  let result: { readonly r: ReturnType<E> } | null = null;
   let debounceTimer: any = null;
-  return (...args) => {
+  return ((...args) => {
     if (result == null) {
       result = {
         r: func(...args),
@@ -31,5 +39,5 @@ export function debounce<Input extends any[], R>(
     }, debounceTimeMs);
 
     return result.r;
-  };
+  }) as E;
 }

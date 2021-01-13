@@ -1279,7 +1279,7 @@
 				{
 					"kind": "Function",
 					"comment": {
-						"description": "Removes all undefined and null values from object recursively",
+						"description": "Removes all undefined and null values from object rreecursively",
 						"example": "P.compact({foo: undefined}) // {}",
 						"parsed": [
 							{
@@ -1962,19 +1962,58 @@
 					"excerptTokens": [
 						{
 							"kind": "Content",
-							"text": "export declare function debounce<Input extends "
+							"text": "export declare function debounce<E extends "
 						},
 						{
 							"kind": "Content",
-							"text": "any[]"
+							"text": "(...args: any[]) => any"
 						},
 						{
 							"kind": "Content",
-							"text": ", R>(func: "
+							"text": ">(debounceTimeMs: "
 						},
 						{
 							"kind": "Content",
-							"text": "(...args: Input) => R"
+							"text": "number"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(func: E) => E"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!debounce:function(1)",
+					"canonicalReferenceGroup": "ts-prime!debounce"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function debounce<E extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: any[]) => any"
+						},
+						{
+							"kind": "Content",
+							"text": ">(func: "
+						},
+						{
+							"kind": "Content",
+							"text": "E"
 						},
 						{
 							"kind": "Content",
@@ -1990,14 +2029,14 @@
 						},
 						{
 							"kind": "Content",
-							"text": "(...args: Input) => R"
+							"text": "E"
 						},
 						{
 							"kind": "Content",
 							"text": ";"
 						}
 					],
-					"canonicalReference": "ts-prime!debounce:function(1)",
+					"canonicalReference": "ts-prime!debounce:function(2)",
 					"canonicalReferenceGroup": "ts-prime!debounce"
 				}
 			],
@@ -9782,6 +9821,219 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Retry promise function",
+						"example": "P.retry(async () => {\nawait delay(1000)\nthrow new Error(\"Failed!\")\n}, ({ count }) => count < 10) // Retry function 10 times",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Logic when to retry",
+									"name": "errorHandler"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the callback function",
+									"name": "fn"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.retry(fn",
+									"errorHandler)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Array"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function retry<E extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: any[]) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<any>"
+						},
+						{
+							"kind": "Content",
+							"text": ">(errorHandler: "
+						},
+						{
+							"kind": "Content",
+							"text": "(stats: {\n    err: "
+						},
+						{
+							"kind": "Reference",
+							"text": "Error",
+							"canonicalReference": "!Error:interface"
+						},
+						{
+							"kind": "Content",
+							"text": ";\n    count: number;\n}) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<boolean> | boolean"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(fn: E) => E"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!retry:function(1)",
+					"canonicalReferenceGroup": "ts-prime!retry"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "Retry promise function",
+						"example": "P.retry(async () => {\nawait delay(1000)\nthrow new Error(\"Failed!\")\n}, ({ count }) => count < 10) // Retry function 10 times",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Logic when to retry",
+									"name": "errorHandler"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the callback function",
+									"name": "fn"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.retry(fn",
+									"errorHandler)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Array"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function retry<E extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: any[]) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<any>"
+						},
+						{
+							"kind": "Content",
+							"text": ">(fn: "
+						},
+						{
+							"kind": "Content",
+							"text": "E"
+						},
+						{
+							"kind": "Content",
+							"text": ", errorHandler: "
+						},
+						{
+							"kind": "Content",
+							"text": "(stats: {\n    err: "
+						},
+						{
+							"kind": "Reference",
+							"text": "Error",
+							"canonicalReference": "!Error:interface"
+						},
+						{
+							"kind": "Content",
+							"text": ";\n    count: number;\n}) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<boolean> | boolean"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "E"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!retry:function(2)",
+					"canonicalReferenceGroup": "ts-prime!retry"
+				}
+			],
+			"kind": "Function",
+			"name": "retry",
+			"canonicalReference": "ts-prime!retry:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!retry",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Array"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Reverses array.",
 						"example": "P.reverse([1, 2, 3]) // [3, 2, 1]\nP.reverse()([1, 2, 3]) // [3, 2, 1]",
 						"parsed": [
@@ -11200,19 +11452,19 @@
 					"excerptTokens": [
 						{
 							"kind": "Content",
-							"text": "export declare function throttle<Input extends "
+							"text": "export declare function throttle<E extends "
 						},
 						{
 							"kind": "Content",
-							"text": "any[]"
+							"text": "(...args: any[]) => any"
 						},
 						{
 							"kind": "Content",
-							"text": ", R>(func: "
+							"text": ">(func: "
 						},
 						{
 							"kind": "Content",
-							"text": "(...args: Input) => R"
+							"text": "E"
 						},
 						{
 							"kind": "Content",
@@ -11228,7 +11480,7 @@
 						},
 						{
 							"kind": "Content",
-							"text": "(...args: Input) => R"
+							"text": "E"
 						},
 						{
 							"kind": "Content",
@@ -11236,6 +11488,45 @@
 						}
 					],
 					"canonicalReference": "ts-prime!throttle:function(1)",
+					"canonicalReferenceGroup": "ts-prime!throttle"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function throttle<E extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: any[]) => any"
+						},
+						{
+							"kind": "Content",
+							"text": ">(throttleTimeMs: "
+						},
+						{
+							"kind": "Content",
+							"text": "number"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(func: E) => E"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!throttle:function(2)",
 					"canonicalReferenceGroup": "ts-prime!throttle"
 				}
 			],

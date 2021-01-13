@@ -25,7 +25,7 @@ function _compact<T>(a: T): T {
 }
 
 /**
- * Removes all undefined and null values from object recursively
+ * Removes all undefined and null values from object rreecursively
  * @param data - the object to compact
  * @signature P.compact(value)
  * @example 
