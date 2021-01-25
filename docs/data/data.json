@@ -5769,6 +5769,332 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Checks if",
+						"example": "P.includesAny(['apple','microsoft','tesla','samsung'],['apple', 'xiomi']) //=> true; Source list contains \"apple\"\nP.includesAny(['apple', 'microsoft'])(['samsung', 'tesla']) //=> false // Source list does not include any of options",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "contains any element of",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "and returns boolean",
+									"name": "includes"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Value to check",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Provided list",
+									"name": "includes"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.includesAny(sourceList",
+									"includeList)"
+								]
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.includesAny(includeList)(sourceList)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Array",
+									"Pipe"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function includesAny<T>(data: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": ", includes: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "boolean"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!includesAny:function(1)",
+					"canonicalReferenceGroup": "ts-prime!includesAny"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function includesAny<T>(includes: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(data: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>) => boolean"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!includesAny:function(2)",
+					"canonicalReferenceGroup": "ts-prime!includesAny"
+				}
+			],
+			"kind": "Function",
+			"name": "includesAny",
+			"canonicalReference": "ts-prime!includesAny:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!includesAny",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Array"
+				},
+				{
+					"tag": "@category",
+					"value": "Pipe"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "Checks if",
+						"example": "P.includesEvery(['apple','microsoft','tesla','samsung'],['apple', 'microsoft']) //=> true; Source list contains \"apple\" and 'microsoft'\nP.includesEvery(['apple', 'microsoft'])(['samsung', 'tesla', 'apple']) //=> false // Source list does not include every of options",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "contains every element of",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "and returns boolean",
+									"name": "includes"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Value to check",
+									"name": "data"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "Provided list",
+									"name": "includes"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.includesEvery(sourceList",
+									"includeList)"
+								]
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.includesEvery(includeList)(sourceList)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Array",
+									"Pipe"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function includesEvery<T>(data: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": ", includes: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "boolean"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!includesEvery:function(1)",
+					"canonicalReferenceGroup": "ts-prime!includesEvery"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function includesEvery<T>(includes: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(data: "
+						},
+						{
+							"kind": "Reference",
+							"text": "ReadonlyArray",
+							"canonicalReference": "!ReadonlyArray:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<T>) => boolean"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!includesEvery:function(2)",
+					"canonicalReferenceGroup": "ts-prime!includesEvery"
+				}
+			],
+			"kind": "Function",
+			"name": "includesEvery",
+			"canonicalReference": "ts-prime!includesEvery:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!includesEvery",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Array"
+				},
+				{
+					"tag": "@category",
+					"value": "Pipe"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Converts a list of objects into an object indexing the objects by the given key.",
 						"example": "P.indexBy(['one', 'two', 'three'], x => x.length) // => {3: 'two', 5: 'three'}\nP.pipe(\n['one', 'two', 'three'],\nP.indexBy(x => x.length)\n) // => {3: 'two', 5: 'three'}",
 						"parsed": [
