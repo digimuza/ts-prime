@@ -76,3 +76,4 @@ export * from './setPath';
 export * from './compact';
 export * from './retry';
 export * from './deepEqual';
+export * from './includes';
