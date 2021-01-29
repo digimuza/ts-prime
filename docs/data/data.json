@@ -9028,6 +9028,263 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Filter the elements of an array that meet the condition specified in a callback function.",
+						"example": "P.filter([1, 2, 3], x => x % 2 === 1) // => [1, 3]\nP.pipe([1, 2, 3], P.filter(x => x % 2 === 1)) // => [1, 3]",
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "The array to filter.",
+									"name": "array"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the callback function.",
+									"name": "fn"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.filter(array",
+									"fn)"
+								]
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.filter(fn)(array)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Array",
+									"Pipe"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function partition<T, S extends "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": ">(array: "
+						},
+						{
+							"kind": "Content",
+							"text": "readonly T[]"
+						},
+						{
+							"kind": "Content",
+							"text": ", fn: "
+						},
+						{
+							"kind": "Content",
+							"text": "(value: T) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "value",
+							"canonicalReference": "ts-prime!~value"
+						},
+						{
+							"kind": "Content",
+							"text": " is S"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "[S[], "
+						},
+						{
+							"kind": "Reference",
+							"text": "Exclude",
+							"canonicalReference": "!Exclude:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, S>[]]"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!partition:function(1)",
+					"canonicalReferenceGroup": "ts-prime!partition"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function partition<T>(array: "
+						},
+						{
+							"kind": "Content",
+							"text": "readonly T[]"
+						},
+						{
+							"kind": "Content",
+							"text": ", fn: "
+						},
+						{
+							"kind": "Reference",
+							"text": "Pred",
+							"canonicalReference": "ts-prime!Pred:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, boolean>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "T[]"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!partition:function(2)",
+					"canonicalReferenceGroup": "ts-prime!partition"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function partition<T, S extends "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": ">(fn: "
+						},
+						{
+							"kind": "Content",
+							"text": "(input: T) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "input",
+							"canonicalReference": "ts-prime!~input"
+						},
+						{
+							"kind": "Content",
+							"text": " is S"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(array: readonly T[]) => [S[], "
+						},
+						{
+							"kind": "Reference",
+							"text": "Exclude",
+							"canonicalReference": "!Exclude:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, S>[]]"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!partition:function(3)",
+					"canonicalReferenceGroup": "ts-prime!partition"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function partition<T>(fn: "
+						},
+						{
+							"kind": "Reference",
+							"text": "Pred",
+							"canonicalReference": "ts-prime!Pred:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, boolean>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(array: readonly T[]) => [T[], T[]]"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!partition:function(4)",
+					"canonicalReferenceGroup": "ts-prime!partition"
+				}
+			],
+			"kind": "Function",
+			"name": "partition",
+			"canonicalReference": "ts-prime!partition:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!partition",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Array"
+				},
+				{
+					"tag": "@category",
+					"value": "Pipe"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Gets the value at `path` of `object`",
 						"example": "P.path({x: { y: 1 }}, ['x', 'y']) // 1\nP.path({x: { y: 1 }}, ['y']) // undefined\nP.pipe({x: { y: { z: { a: [0] }} }}, P.path(\"x.y.z.a.0\".split('.'))) // 0",
 						"parsed": [
@@ -9652,6 +9909,39 @@
 					"value": "Function"
 				}
 			]
+		},
+		{
+			"members": [
+				{
+					"kind": "TypeAlias",
+					"comment": {
+						"description": "",
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare type PredIndexed<T, K> = "
+						},
+						{
+							"kind": "Content",
+							"text": "(input: T, index: number, array: readonly T[]) => K"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!PredIndexed:type",
+					"canonicalReferenceGroup": "ts-prime!PredIndexed"
+				}
+			],
+			"kind": "TypeAlias",
+			"name": "PredIndexed",
+			"canonicalReference": "ts-prime!PredIndexed:type",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!PredIndexed",
+			"tags": []
 		},
 		{
 			"members": [

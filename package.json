@@ -1,6 +1,6 @@
 {
   "name": "ts-prime",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "A utility library for JavaScript and Typescript.",
   "main": "dist/commonjs/index.js",
   "module": "dist/es/index.js",
@@ -18,7 +18,7 @@
     "typescript": "^3.8.3"
   },
   "scripts": {
-    "prepublish": "yarn test",
+    "prepublish": "yarn test && yarn build",
     "test": "jest --coverage",
     "prettier": "prettier 'src/**/*.ts' --write",
     "build": "cd ./scripts && ./build.sh && yarn ts-docflux"
