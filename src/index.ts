@@ -77,3 +77,4 @@ export * from './compact';
 export * from './retry';
 export * from './deepEqual';
 export * from './includes';
+export * from './partition'
