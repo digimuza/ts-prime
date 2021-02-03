@@ -11,7 +11,7 @@
     "jest": "^22.4.3",
     "marked": "^0.4.0",
     "prettier": "^2.0.1",
-    "ts-docflux": "^0.0.9",
+    "ts-docflux": "^0.0.10",
     "ts-jest": "^22.4.5",
     "ts-node": "^8.4.1",
     "typedoc": "0.11.1",
