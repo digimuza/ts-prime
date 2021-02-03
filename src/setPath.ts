@@ -10,9 +10,7 @@ import { type } from './type';
  * @signature
  *    P.setPath(obj, path, value)
  * @example
- * ```ts
  *    P.setPath({ data: {} }, "data.value.max", 100) // { data: { value: { max: 100 } } }
- * ```
  * @category Object
  */
 export function setPath(

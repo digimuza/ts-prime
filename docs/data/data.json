@@ -10766,7 +10766,7 @@
 					"kind": "Function",
 					"comment": {
 						"description": "Dynamically sets object path",
-						"example": "```ts\nP.setPath({ data: {} }, \"data.value.max\", 100) // { data: { value: { max: 100 } } }\n```",
+						"example": "P.setPath({ data: {} }, \"data.value.max\", 100) // { data: { value: { max: 100 } } }",
 						"parsed": [
 							{
 								"tag": "@param",
