@@ -49,7 +49,7 @@ export * from './splitWhen';
 export * from './take';
 export * from './takeWhile';
 export * from './times';
-export * from './toPairs';
+export * from './entries';
 export * from './type';
 export * from './uniq';
 export * from './uniqBy';
@@ -78,3 +78,5 @@ export * from './retry';
 export * from './deepEqual';
 export * from './includes';
 export * from './partition'
+export * from './values'
+export * from './keys'

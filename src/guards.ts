@@ -253,7 +253,7 @@ export function isNot<T>(predicate: (data: T) => any) {
 }
 
 /**
- * Inverse predicate
+ * Checks if object contains defined
  * @param predicate - predicate function
  * @example
  * const data = [new Error('sample'), 1, 2].filter(P.isNot(P.isError)) // [1,2]
