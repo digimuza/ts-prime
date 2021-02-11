@@ -8,6 +8,7 @@
 ## Links
 
 Online documentation - [here](https://digimuza.github.io/ts-prime)
+
 Test coverage report - [here](https://digimuza.github.io/ts-prime/coverage/lcov-report/index.html)
 ## Installation
 

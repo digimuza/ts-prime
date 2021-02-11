@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1613034976936" clover="3.2.0">
-  <project timestamp="1613034976936" name="All files">
-    <metrics statements="1359" coveredstatements="1290" conditionals="563" coveredconditionals="448" methods="344" coveredmethods="333" elements="2266" coveredelements="2071" complexity="0" loc="1359" ncloc="1359" packages="1" files="91" classes="91">
+<coverage generated="1613063377429" clover="3.2.0">
+  <project timestamp="1613063377429" name="All files">
+    <metrics statements="1390" coveredstatements="1319" conditionals="583" coveredconditionals="466" methods="346" coveredmethods="335" elements="2319" coveredelements="2120" complexity="0" loc="1390" ncloc="1390" packages="1" files="92" classes="92">
       <file name="_counter.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/_counter.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="10" type="stmt"/>
@@ -414,9 +414,9 @@
       <file name="delay.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/delay.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="10" count="9" type="stmt"/>
-        <line num="11" count="44" type="stmt"/>
-        <line num="12" count="44" type="stmt"/>
-        <line num="13" count="43" type="stmt"/>
+        <line num="11" count="28" type="stmt"/>
+        <line num="12" count="28" type="stmt"/>
+        <line num="13" count="27" type="stmt"/>
       </file>
       <file name="difference.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/difference.ts">
         <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
@@ -810,7 +810,7 @@
         <line num="60" count="6" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/index.ts">
-        <metrics statements="84" coveredstatements="84" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="85" coveredstatements="85" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
@@ -895,6 +895,7 @@
         <line num="82" count="6" type="stmt"/>
         <line num="83" count="6" type="stmt"/>
         <line num="84" count="6" type="stmt"/>
+        <line num="85" count="6" type="stmt"/>
       </file>
       <file name="indexBy.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/indexBy.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
@@ -1602,6 +1603,39 @@
         <line num="49" count="24" type="stmt"/>
         <line num="50" count="24" type="stmt"/>
       </file>
+      <file name="url.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/url.ts">
+        <metrics statements="30" coveredstatements="28" conditionals="20" coveredconditionals="18" methods="2" coveredmethods="2"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="15" count="103" type="stmt"/>
+        <line num="16" count="32" type="stmt"/>
+        <line num="18" count="32" type="stmt"/>
+        <line num="19" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="31" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="25" count="31" type="cond" truecount="4" falsecount="0"/>
+        <line num="26" count="16" type="stmt"/>
+        <line num="27" count="16" type="stmt"/>
+        <line num="31" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="5" type="stmt"/>
+        <line num="34" count="26" type="stmt"/>
+        <line num="37" count="31" type="stmt"/>
+        <line num="38" count="87" type="stmt"/>
+        <line num="40" count="87" type="cond" truecount="1" falsecount="1"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="44" count="87" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="84" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="54" type="stmt"/>
+        <line num="50" count="84" type="cond" truecount="2" falsecount="0"/>
+        <line num="52" count="53" type="stmt"/>
+        <line num="55" count="31" type="stmt"/>
+        <line num="58" count="84" type="stmt"/>
+        <line num="62" count="31" type="stmt"/>
+        <line num="63" count="31" type="stmt"/>
+        <line num="65" count="31" type="stmt"/>
+        <line num="66" count="31" type="cond" truecount="2" falsecount="0"/>
+        <line num="68" count="31" type="stmt"/>
+      </file>
       <file name="uuid.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/uuid.ts">
         <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
         <line num="7" count="7" type="stmt"/>
@@ -1624,13 +1658,13 @@
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="22" count="32" type="stmt"/>
-        <line num="23" count="32" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="16" type="stmt"/>
+        <line num="23" count="16" type="cond" truecount="1" falsecount="1"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="32" type="stmt"/>
+        <line num="26" count="16" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="28" count="31" type="stmt"/>
-        <line num="29" count="31" type="stmt"/>
+        <line num="28" count="15" type="stmt"/>
+        <line num="29" count="15" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
       </file>
