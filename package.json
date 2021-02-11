@@ -44,6 +44,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "coverageDirectory": "./docs/coverage",
     "testRegex": "/src/.*.test.(jsx?|tsx?)$",
     "testPathIgnorePatterns": [
       "/node_modules/",
