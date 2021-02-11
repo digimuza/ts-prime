@@ -5,6 +5,10 @@
 [![npm module](https://badge.fury.io/js/ts-prime.svg)](https://www.npmjs.org/package/ts-prime)
 [![dependencies](https://david-dm.org/digimuza/ts-prime/status.svg)](https://david-dm.org/digimuza/ts-prime)
 
+## Links
+
+Online documentation - [here](https://digimuza.github.io/ts-prime)
+Test coverage report - [here](https://digimuza.github.io/ts-prime/coverage/lcov-report/index.html)
 ## Installation
 
 ```bash
