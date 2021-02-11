@@ -2,7 +2,6 @@ import {
   isString,
   isBoolean,
   isArray,
-  isDate,
   isDefined,
   isNil,
   isFunction,
@@ -55,7 +54,7 @@ const dataProvider = (
     case 'date':
       return new Date();
     case 'function':
-      return () => {};
+      return () => { };
     case 'null':
       return null;
     case 'promise':
@@ -164,31 +163,6 @@ describe('Describe guards behavior', () => {
     expect(data.every(c => Array.isArray(c))).toEqual(true);
     assertType<number[][]>(data);
   });
-  test('isDate: should work as type guard', () => {
-    const data = dataProvider('date');
-    const data1: unknown = dataProvider('date');
-    if (isDate(data)) {
-      expect(data instanceof Date).toEqual(true);
-      assertType<Date>(data);
-    }
-
-    if (isDate(data1)) {
-      expect(data1 instanceof Date).toEqual(true);
-      assertType<Date>(data1);
-    }
-  });
-  test('isDate: should work as type guard in filter', () => {
-    const data = [
-      dataProvider('error'),
-      dataProvider('array'),
-      dataProvider('function'),
-      dataProvider('null'),
-      dataProvider('number'),
-      dataProvider('date'),
-    ].filter(isDate);
-    expect(data.every(c => c instanceof Date)).toEqual(true);
-    assertType<Date[]>(data);
-  });
   test('isDefined": should work as type guard', () => {
     const data = dataProvider('date');
     if (isDefined(data)) {
@@ -221,8 +195,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-            a: string;
-          }
+          a: string;
+        }
         | (() => void)
         | number[]
         | Date
@@ -314,8 +288,8 @@ describe('Describe guards behavior', () => {
       expect(typeof data).toEqual('object');
       assertType<
         | {
-            a: string;
-          }
+          a: string;
+        }
         | Date
         | Error
         | Promise<number>
@@ -354,8 +328,8 @@ describe('Describe guards behavior', () => {
     assertType<
       (
         | {
-            a: string;
-          }
+          a: string;
+        }
         | Date
         | Error
         | Promise<number>
@@ -429,8 +403,8 @@ describe('Describe guards behavior', () => {
         | number
         | boolean
         | {
-            a: string;
-          }
+          a: string;
+        }
         | (() => void)
         | number[]
         | Date

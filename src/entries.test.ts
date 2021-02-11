@@ -31,3 +31,15 @@ test('should return pairs', () => {
     ['c', 3],
   ]);
 });
+
+
+
+test('should return pairs', () => {
+  const start = ["a", "b", "c"].map((v, i) => [v, i] as const);
+  const result = fromEntries(start)
+  ensureType<{ [k: string]: number }>(result)
+
+  expect(result).toEqual({
+    a: 0, b: 1, c: 2
+  });
+});

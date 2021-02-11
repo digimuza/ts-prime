@@ -1,4 +1,5 @@
 import { purry } from "./purry";
+import { AnyArray } from "./_types";
 
 function _entries<T extends { [k: string]: unknown }>(
   object: T
@@ -10,9 +11,9 @@ function _entries<T extends { [k: string]: unknown }>(
  * Returns an array of key/values of the enumerable properties of an object.
  * @param object - Any object
  * @signature
- *    P.toPairs(object)
+ *    P.entries(object)
  * @example
- *    P.toPairs({ a: 1, b: 2, c: 3 }) // => [['a', 1], ['b', 2], ['c', 3]]
+ *    P.entries({ a: 1, b: 2, c: 3 }) // => [['a', 1], ['b', 2], ['c', 3]]
  * @category Object
  */
 export function entries<T extends { [k: string]: unknown }>(): (obj: T) => ReadonlyArray<[keyof T, T[keyof T]]>
@@ -35,13 +36,13 @@ function _fromEntries<T extends [string, unknown]>(data: ReadonlyArray<T>) {
  * Construct object from tuple array
  * @param data - List of tuples
  * @signature
- *    P.fromPairs(tuples)
+ *    P.fromEntries(tuples)
  * @example
- *    P.fromPairs([["a", 5], ["b", 4]]) // => { a: 5, b: 4 }
+ *    P.fromEntries([["a", 5], ["b", 4]]) // => { a: 5, b: 4 }
  * @category Object
  */
-export function fromEntries<T extends ReadonlyArray<[string, any]>>(): (entries: T) => { [k in T[number][0]]: T[number][1] }
-export function fromEntries<T extends ReadonlyArray<[string, any]>>(entries: T): { [k in T[number][0]]: T[number][1] }
+export function fromEntries<T extends AnyArray<[string, any] | readonly [string, any]>>(): (entries: T) => { [k in T[number][0]]: T[number][1] }
+export function fromEntries<T extends AnyArray<[string, any] | readonly [string, any]>>(entries: T): { [k in T[number][0]]: T[number][1] }
 export function fromEntries() {
   return purry(_fromEntries, arguments)
 }

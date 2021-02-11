@@ -212,28 +212,6 @@ type DefinitelyError<T> = Extract<T, Error> extends never
 export function isError<T>(data: T): data is DefinitelyError<T> {
   return data instanceof Error;
 }
-
-type DefinitelyDate<T> = Extract<T, Date> extends never
-  ? Date
-  : Extract<T, Date>;
-
-/**
- * Checks if `data` is type of `Date`
- * @param data - Anything
- * @example
- * const item = new Date() as unknown
- * if (P.isDate(item)) {
- *    // This is definitely an Date
- * }
- *
- * const items = [1,2,3,4,new Date()].filter(P.isDate) //=> [new Date()]
- * @category Guard
- */
-// @ts-ignore
-export function isDate<T>(data: T): data is DefinitelyDate<T> {
-  return data instanceof Date;
-}
-
 /**
  * Inverse predicate
  * @param predicate - predicate function

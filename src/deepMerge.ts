@@ -1,16 +1,7 @@
 import { isDefined, isArray, isObject } from './guards';
 import { uniq } from './uniq';
 import { clone } from './clone';
-
-export interface DeepPartialArray<T> extends Array<DeepPartial<T>> {}
-export type DeepPartial<T> = T extends Function
-  ? T
-  : T extends Array<infer U>
-  ? DeepPartialArray<U>
-  : T extends object
-  ? DeepPartialObject<T>
-  : T | undefined;
-export type DeepPartialObject<T> = { [P in keyof T]?: DeepPartial<T[P]> };
+import { DeepPartial, DeepPartialObject } from './types';
 
 function isCyclic(object: unknown) {
   const seenObjects = new WeakMap(); // use to keep track of which objects have been seen.
@@ -79,11 +70,7 @@ function recursiveMerge(a: unknown, b: unknown): unknown {
 
   // If we here we know that a is primitive value if it's defined we chose a over b
   // Unless this value is empty string
-  if (isDefined(a) && a !== '') {
-    return a;
-  }
-
-  if (b === '') {
+  if (isDefined(a)) {
     return a;
   }
 
@@ -105,11 +92,14 @@ function recursiveMerge(a: unknown, b: unknown): unknown {
  * -  `(truthy plain value) + ob = (truthy plain value)`
  * -  `(truthy plain value) + undefined = (truthy plain value)`
  * -  `A(truthy plain value) + B(truthy plain value) = A(truthy plain value)`
+ * -  `undefined + B(truthy plain value) = B(truthy plain value)`
+ * -  `null + B(truthy plain value) = B(truthy plain value)`
+ * 
  *
  * Handles circular references
  * @category Utility
  */
-
+export function deepMergeLeft<T extends object, X extends DeepPartial<T>>(data: T, ...source: X[]): T;
 export function deepMergeLeft<T extends object>(...sources: T[]): T;
 export function deepMergeLeft<T extends object>(
   target: T,
@@ -138,6 +128,7 @@ export function deepMergeLeft<T extends object>(
  * @category Utility
  */
 
+export function deepMergeRight<T extends object, X extends DeepPartial<T>>(data: T, ...source: X[]): T;
 export function deepMergeRight<T extends object>(...sources: T[]): T;
 export function deepMergeRight<T extends object>(
   target: T,

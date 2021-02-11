@@ -14,12 +14,14 @@
  *    P.type(/[A-z]/); //=> "RegExp"
  *    P.type(() => {}); //=> "Function"
  *    P.type(undefined); //=> "Undefined"
+ *    P.type(new Date()); //=> "Date"
+ *    P.type(new MyClass()); // => "MyClass" 
  * @category Utility
  */
-export function type(val: any) {
-  return val === null
+export function type(val: any): string {
+  return (val === null
     ? 'Null'
     : val === undefined
-    ? 'Undefined'
-    : Object.prototype.toString.call(val).slice(8, -1);
+      ? 'Undefined'
+      : Object.prototype.toString.call(val).slice(8, -1));
 }

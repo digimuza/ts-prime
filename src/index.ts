@@ -80,3 +80,5 @@ export * from './includes';
 export * from './partition'
 export * from './values'
 export * from './keys'
+export * from './bytes'
+export * from './types'

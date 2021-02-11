@@ -16,6 +16,11 @@ it('"Number" if given a numeric value', () => {
   expect(type(4)).toEqual('Number');
 });
 
+it('"Object" if given a date value', () => {
+  expect(type(new Date())).toEqual('Date');
+});
+
+
 it('"Number" if given the NaN value', () => {
   expect(type(NaN)).toEqual('Number');
 });

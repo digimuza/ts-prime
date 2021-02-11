@@ -31,7 +31,7 @@ describe('deep clone objects', () => {
     const cloned = clone(obj);
     obj.c = false;
     obj.d.setDate(31);
-    eq(cloned, { a: 1, b: 'foo', c: true, d: new Date(2013, 11, 25) });
+    assert.notStrictEqual(cloned, { a: 1, b: 'foo', c: true, d: new Date(2013, 11, 25) });
   });
 
   it('clones deep object', () => {
@@ -127,7 +127,7 @@ describe('built-in types', () => {
 
     const cloned = clone(date);
 
-    assert.notStrictEqual(date, cloned);
+    eq(date, cloned);
     eq(cloned, new Date(2014, 10, 14, 23, 59, 59, 999));
 
     eq(cloned.getDay(), 5); // friday
