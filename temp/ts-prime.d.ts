@@ -1672,6 +1672,25 @@ declare type PredIndexed_2<T, K> = (input: T, index: number, array: readonly T[]
 
 declare type PredIndexedOptional<T, K> = (input: T, index?: number, array?: readonly T[]) => K;
 
+declare interface PrettyMs {
+    days: {
+        unit: string;
+    };
+    hours: {
+        unit: string;
+    };
+    minutes: {
+        unit: string;
+    };
+    seconds: {
+        unit: string;
+    };
+}
+
+export declare function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>): string;
+
+export declare function prettyTimeDiff(date: number | Date | string, from?: number): string;
+
 /**
  * Extracts Promise value
  * @example
