@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1613066348448" clover="3.2.0">
-  <project timestamp="1613066348448" name="All files">
-    <metrics statements="1390" coveredstatements="1319" conditionals="583" coveredconditionals="466" methods="346" coveredmethods="335" elements="2319" coveredelements="2120" complexity="0" loc="1390" ncloc="1390" packages="1" files="92" classes="92">
+<coverage generated="1614090317057" clover="3.2.0">
+  <project timestamp="1614090317058" name="All files">
+    <metrics statements="1391" coveredstatements="1320" conditionals="583" coveredconditionals="466" methods="346" coveredmethods="335" elements="2320" coveredelements="2121" complexity="0" loc="1391" ncloc="1391" packages="1" files="92" classes="92">
       <file name="_counter.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/_counter.ts">
         <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="1" count="10" type="stmt"/>
@@ -414,9 +414,9 @@
       <file name="delay.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/delay.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
         <line num="10" count="9" type="stmt"/>
-        <line num="11" count="37" type="stmt"/>
-        <line num="12" count="37" type="stmt"/>
-        <line num="13" count="36" type="stmt"/>
+        <line num="11" count="50" type="stmt"/>
+        <line num="12" count="50" type="stmt"/>
+        <line num="13" count="49" type="stmt"/>
       </file>
       <file name="difference.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/difference.ts">
         <metrics statements="13" coveredstatements="13" conditionals="4" coveredconditionals="3" methods="5" coveredmethods="5"/>
@@ -810,7 +810,7 @@
         <line num="60" count="6" type="stmt"/>
       </file>
       <file name="index.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/index.ts">
-        <metrics statements="85" coveredstatements="85" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="86" coveredstatements="86" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="6" type="stmt"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
@@ -896,6 +896,7 @@
         <line num="83" count="6" type="stmt"/>
         <line num="84" count="6" type="stmt"/>
         <line num="85" count="6" type="stmt"/>
+        <line num="86" count="6" type="stmt"/>
       </file>
       <file name="indexBy.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/indexBy.ts">
         <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
@@ -1490,11 +1491,11 @@
       </file>
       <file name="time.ts" path="/home/andmzr/Documents/Darbas/Projektai/ts-prime/src/time.ts">
         <metrics statements="50" coveredstatements="41" conditionals="36" coveredconditionals="16" methods="5" coveredmethods="5"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="1" count="6" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="3" count="6" type="stmt"/>
+        <line num="4" count="6" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
         <line num="15" count="3" type="stmt"/>
         <line num="16" count="3" type="stmt"/>
         <line num="17" count="3" type="stmt"/>
@@ -1658,13 +1659,13 @@
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="0" type="stmt"/>
-        <line num="22" count="25" type="stmt"/>
-        <line num="23" count="25" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="38" type="stmt"/>
+        <line num="23" count="38" type="cond" truecount="1" falsecount="1"/>
         <line num="24" count="0" type="stmt"/>
-        <line num="26" count="25" type="stmt"/>
+        <line num="26" count="38" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="28" count="24" type="stmt"/>
-        <line num="29" count="24" type="stmt"/>
+        <line num="28" count="37" type="stmt"/>
+        <line num="29" count="37" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
       </file>

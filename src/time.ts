@@ -1,4 +1,4 @@
-import { deepMergeLeft } from "./deepMerge";
+import { deepMergeRight } from "./deepMerge";
 import { entries } from "./entries";
 import { isOneOf } from "./isOneOf";
 import { toDate } from "./parse";
@@ -9,6 +9,37 @@ interface PrettyMs {
     hours: { unit: string },
     minutes: { unit: string },
     seconds: { unit: string }
+}
+
+// P.Time.Day(200)
+export namespace Time {
+    /**
+     * Converts seconds to milliseconds
+     */
+    export function Second(seconds: number) {
+        return seconds * 1000;
+    }
+
+    /**
+     * Converts minutes to milliseconds
+     */
+    export function Minute(minutes: number) {
+        return Second(minutes) * 60;
+    }
+
+    /**
+     * Converts hours to milliseconds
+     */
+    export function Hour(h: number) {
+        return Minute(h) * 60;
+    }
+
+    /**
+     * Converts days to milliseconds
+     */
+    export function Day(d: number) {
+        return Hour(d) * 24;
+    }
 }
 
 export function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>): string {
@@ -35,7 +66,7 @@ export function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>):
         seconds: { unit: 's' }
     }
 
-    const merged = deepMergeLeft(defaultUnit, options || {})
+    const merged = deepMergeRight(defaultUnit, options || {})
 
 
     const entriesV = entries(merged)
@@ -45,7 +76,7 @@ export function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>):
         .filter(([k]) => {
             return val[k]
         })
-        .map(([k,v]) => {
+        .map(([k, v]) => {
             return `${val[k]}${v.unit}`
         }).join(" ")
 
@@ -53,7 +84,11 @@ export function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>):
 }
 
 
-
+/**
+ * 
+ * @param date 
+ * @param from - {optional} time diff 
+ */
 export function prettyTimeDiff(date: number | Date | string, from: number = Date.now()): string {
     const validDate = toDate(date)
     if (validDate == null) {
@@ -102,6 +137,4 @@ export function prettyTimeDiff(date: number | Date | string, from: number = Date
     if (posDelta < day * 2) return 'tomorrow';
 
     return `after ${Math.floor(delta / day)} days`;
-
-
 }

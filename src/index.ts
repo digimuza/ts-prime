@@ -63,6 +63,7 @@ export * from './filterRecord';
 export * from './flatMapRecord';
 export * from './minBy';
 export * from './capitalize';
+export * from './pick';
 export * from './convertStringToNameCase';
 export * from './debounce';
 export * from './throttle';
@@ -84,3 +85,4 @@ export * from './bytes'
 export * from './types'
 export * from './url'
 export * from './time'
+export * from './rateLimiter'
