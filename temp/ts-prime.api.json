@@ -12715,6 +12715,304 @@
         },
         {
           "kind": "Function",
+          "canonicalReference": "ts-prime!pick:function(1)",
+          "docComment": "/**\n * Creates an object composed of the picked `object` properties.\n *\n * @param object - the target object\n *\n * @param names - the properties names  @signature R.pick(object, [prop1, prop2])\n *\n * @example\n *\n * P.pick({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { a: 1, d: 4 }\n *\n * @example\n *\n * P.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.pick(['a', 'd'])) // => { a: 1, d: 4 } @data_first  @category Object\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function pick<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": ", Q extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ">(object: "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ", names: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AnyArray",
+              "canonicalReference": "ts-prime!AnyArray:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<Q>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "IsPickKey",
+              "canonicalReference": "ts-prime!~IsPickKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, Q> extends 'ON' ? {\n    [k in Q]: T[k];\n} : {\n    [k in keyof T]?: T[k];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 12
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "object",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "names",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "Q",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "pick"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "ts-prime!pick:function(2)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function pick<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": ", K extends "
+            },
+            {
+              "kind": "Content",
+              "text": "keyof T"
+            },
+            {
+              "kind": "Content",
+              "text": ">(object: "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": ", names: "
+            },
+            {
+              "kind": "Content",
+              "text": "readonly K[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    [k in K]: T[k];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 9,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 2,
+          "parameters": [
+            {
+              "parameterName": "object",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "names",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 8
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "K",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "pick"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "ts-prime!pick:function(3)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function pick<T extends "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": ", Q extends "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ">(names: "
+            },
+            {
+              "kind": "Content",
+              "text": "readonly Q[]"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(object: T) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "IsPickKey",
+              "canonicalReference": "ts-prime!~IsPickKey:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, Q> extends 'ON' ? {\n    [k in Q]: T[k];\n} : {\n    [k in keyof T]?: T[k];\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 10
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 3,
+          "parameters": [
+            {
+              "parameterName": "names",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            },
+            {
+              "typeParameterName": "Q",
+              "constraintTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "pick"
+        },
+        {
+          "kind": "Function",
           "canonicalReference": "ts-prime!pipe:function(1)",
           "docComment": "/**\n * Perform left-to-right function composition.\n *\n * @param value - The initial value.\n *\n * @param operations - the list of operations to apply.  @signature P.pipe(data, op1, op2, op3)\n *\n * @example\n *\n * P.pipe( [1, 2, 3, 4], P.map(x => x * 2), arr => [arr[0] + arr[1], arr[2] + arr[3]], ) // => [6, 14]\n *\n * @data_first  @category Function\n */\n",
           "excerptTokens": [
@@ -13957,7 +14255,7 @@
         {
           "kind": "Function",
           "canonicalReference": "ts-prime!prettyTimeDiff:function(1)",
-          "docComment": "",
+          "docComment": "/**\n * @param date - \n *\n * @param from - time diff\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -14289,6 +14587,232 @@
             }
           ],
           "name": "range"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "ts-prime!rateLimiter:function(1)",
+          "docComment": "/**\n * Rate limiter function middleware\n *\n * @param errorHandler - logic when to retry\n *\n * @param request - request function  @signature P.rateLimiter(fn, options)\n *\n * @example\n *\n * const requestToEndpoint = async (endpoint: \"A\" | \"B\" | \"C\" | \"D\", data: any) => { ... } const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 }) // Only two request are fired to endpoint A const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=>{ return rate(obj.endpoint, obj.data) }))  @category Utility, Promise\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function rateLimiter<F extends "
+            },
+            {
+              "kind": "Content",
+              "text": "(...args: unknown[]) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<unknown>"
+            },
+            {
+              "kind": "Content",
+              "text": ">(request: "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": ", options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RateLimiterOptions",
+              "canonicalReference": "ts-prime!RateLimiterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<F>"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "F"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "returnTypeTokenRange": {
+            "startIndex": 10,
+            "endIndex": 11
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "request",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              }
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              }
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "F",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "rateLimiter"
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "ts-prime!RateLimiterOptions:interface",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface RateLimiterOptions<F extends "
+            },
+            {
+              "kind": "Content",
+              "text": "(...args: unknown[]) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<unknown>"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "F",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "RateLimiterOptions",
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ts-prime!RateLimiterOptions#concurrentRequests:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "concurrentRequests?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "((rateLimitId: string) => number) | number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "concurrentRequests",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ts-prime!RateLimiterOptions#maxTotalRequests:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "maxTotalRequests?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "maxTotalRequests",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "ts-prime!RateLimiterOptions#rateLimitId:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "rateLimitId: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(...args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ArgsType",
+                  "canonicalReference": "ts-prime!ArgsType:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<F>) => string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "rateLimitId",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              }
+            }
+          ],
+          "extendsTokenRanges": []
         },
         {
           "kind": "Function",
@@ -16586,6 +17110,193 @@
             }
           ],
           "name": "throttle"
+        },
+        {
+          "kind": "Namespace",
+          "canonicalReference": "ts-prime!Time:namespace",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare namespace Time "
+            }
+          ],
+          "releaseTag": "Public",
+          "name": "Time",
+          "members": [
+            {
+              "kind": "Function",
+              "canonicalReference": "ts-prime!Time.Day:function(1)",
+              "docComment": "/**\n * Converts days to milliseconds\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "function Day(d: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "d",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "Day"
+            },
+            {
+              "kind": "Function",
+              "canonicalReference": "ts-prime!Time.Hour:function(1)",
+              "docComment": "/**\n * Converts hours to milliseconds\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "function Hour(h: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "h",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "Hour"
+            },
+            {
+              "kind": "Function",
+              "canonicalReference": "ts-prime!Time.Minute:function(1)",
+              "docComment": "/**\n * Converts minutes to milliseconds\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "function Minute(minutes: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "minutes",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "Minute"
+            },
+            {
+              "kind": "Function",
+              "canonicalReference": "ts-prime!Time.Second:function(1)",
+              "docComment": "/**\n * Converts seconds to milliseconds\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "function Second(seconds: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "seconds",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "name": "Second"
+            }
+          ]
         },
         {
           "kind": "Function",

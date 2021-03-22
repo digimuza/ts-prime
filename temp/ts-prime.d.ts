@@ -1312,6 +1312,10 @@ export declare function isOneOf<T extends string | number | boolean>(value: stri
 
 export declare function isOneOf<T extends string | number | boolean>(array: ReadonlyArray<T>): (value: string | number | boolean | undefined) => value is T;
 
+declare type IsPickKey<T extends {
+    [k: string]: unknown;
+}, Keys extends string> = Keys extends keyof T ? 'ON' : 'OFF';
+
 /**
  * Checks if `data` is `Promise`.
  * @param data - Anything
@@ -1635,6 +1639,34 @@ export declare function path(object: Record<string, unknown>, path: readonly str
 export declare function path(path: readonly (string | number)[]): (object: Record<string, unknown>) => unknown;
 
 /**
+ * Creates an object composed of the picked `object` properties.
+ * @param object the target object
+ * @param names the properties names
+ * @signature R.pick(object, [prop1, prop2])
+ * @example
+ *    P.pick({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { a: 1, d: 4 }
+ * @example
+ *    P.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.pick(['a', 'd'])) // => { a: 1, d: 4 }
+ * @data_first
+ * @category Object
+ */
+export declare function pick<T extends {}, Q extends string>(object: T, names: AnyArray<Q>): IsPickKey<T, Q> extends 'ON' ? {
+    [k in Q]: T[k];
+} : {
+    [k in keyof T]?: T[k];
+};
+
+export declare function pick<T extends {}, K extends keyof T>(object: T, names: readonly K[]): {
+    [k in K]: T[k];
+};
+
+export declare function pick<T extends {}, Q extends string>(names: readonly Q[]): (object: T) => IsPickKey<T, Q> extends 'ON' ? {
+    [k in Q]: T[k];
+} : {
+    [k in keyof T]?: T[k];
+};
+
+/**
  * Perform left-to-right function composition.
  * @param value The initial value.
  * @param operations the list of operations to apply.
@@ -1689,6 +1721,11 @@ declare interface PrettyMs {
 
 export declare function prettyMs(milliseconds: number, options?: DeepPartial<PrettyMs>): string;
 
+/**
+ *
+ * @param date
+ * @param from - {optional} time diff
+ */
 export declare function prettyTimeDiff(date: number | Date | string, from?: number): string;
 
 /**
@@ -1761,6 +1798,29 @@ export declare function randomString(length: number): string;
 export declare function range(start: number, end: number): number[];
 
 export declare function range(end: number): (start: number) => number[];
+
+/**
+ * Rate limiter function middleware
+ * @param errorHandler logic when to retry
+ * @param request request function
+ * @signature
+ *    P.rateLimiter(fn, options)
+ * @example
+ *    const requestToEndpoint = async (endpoint: "A" | "B" | "C" | "D", data: any) => { ...  }
+ *    const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 })
+ *    // Only two request are fired to endpoint A
+ *    const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=>{
+ *      return rate(obj.endpoint, obj.data)
+ *    }))
+ * @category Utility, Promise
+ */
+export declare function rateLimiter<F extends (...args: unknown[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F;
+
+export declare interface RateLimiterOptions<F extends (...args: unknown[]) => Promise<unknown>> {
+    rateLimitId: (...args: ArgsType<F>) => string;
+    concurrentRequests?: ((rateLimitId: string) => number) | number;
+    maxTotalRequests?: number;
+}
 
 /**
  * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
@@ -2041,6 +2101,25 @@ export declare function takeWhile<T>(fn: (item: T) => boolean): (array: readonly
 export declare function throttle<E extends (...args: any[]) => any>(func: E, throttleTimeMs: number): E;
 
 export declare function throttle<E extends (...args: any[]) => any>(throttleTimeMs: number): (func: E) => E;
+
+export declare namespace Time {
+    /**
+     * Converts seconds to milliseconds
+     */
+    export function Second(seconds: number): number;
+    /**
+     * Converts minutes to milliseconds
+     */
+    export function Minute(minutes: number): number;
+    /**
+     * Converts hours to milliseconds
+     */
+    export function Hour(h: number): number;
+    /**
+     * Converts days to milliseconds
+     */
+    export function Day(d: number): number;
+}
 
 /**
  * Prevents promise to execute longer than X ms

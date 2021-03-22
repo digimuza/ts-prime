@@ -10671,6 +10671,308 @@
 				{
 					"kind": "Function",
 					"comment": {
+						"description": "Creates an object composed of the picked `object` properties.",
+						"examples": [
+							"P.pick({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { a: 1, d: 4 }",
+							"P.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.pick(['a', 'd'])) // => { a: 1, d: 4 }"
+						],
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the target object",
+									"name": "object"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the properties names",
+									"name": "names"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"R.pick(object",
+									"[prop1",
+									"prop2])"
+								]
+							},
+							{
+								"tag": "@data_first",
+								"content": []
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Object"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function pick<T extends "
+						},
+						{
+							"kind": "Content",
+							"text": "{}"
+						},
+						{
+							"kind": "Content",
+							"text": ", Q extends "
+						},
+						{
+							"kind": "Content",
+							"text": "string"
+						},
+						{
+							"kind": "Content",
+							"text": ">(object: "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": ", names: "
+						},
+						{
+							"kind": "Reference",
+							"text": "AnyArray",
+							"canonicalReference": "ts-prime!AnyArray:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<Q>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Reference",
+							"text": "IsPickKey",
+							"canonicalReference": "ts-prime!~IsPickKey:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, Q> extends 'ON' ? {\n    [k in Q]: T[k];\n} : {\n    [k in keyof T]?: T[k];\n}"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!pick:function(1)",
+					"canonicalReferenceGroup": "ts-prime!pick"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "Creates an object composed of the picked `object` properties.",
+						"examples": [
+							"P.pick({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { a: 1, d: 4 }",
+							"P.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.pick(['a', 'd'])) // => { a: 1, d: 4 }"
+						],
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the target object",
+									"name": "object"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the properties names",
+									"name": "names"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"R.pick(object",
+									"[prop1",
+									"prop2])"
+								]
+							},
+							{
+								"tag": "@data_first",
+								"content": []
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Object"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function pick<T extends "
+						},
+						{
+							"kind": "Content",
+							"text": "{}"
+						},
+						{
+							"kind": "Content",
+							"text": ", K extends "
+						},
+						{
+							"kind": "Content",
+							"text": "keyof T"
+						},
+						{
+							"kind": "Content",
+							"text": ">(object: "
+						},
+						{
+							"kind": "Content",
+							"text": "T"
+						},
+						{
+							"kind": "Content",
+							"text": ", names: "
+						},
+						{
+							"kind": "Content",
+							"text": "readonly K[]"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "{\n    [k in K]: T[k];\n}"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!pick:function(2)",
+					"canonicalReferenceGroup": "ts-prime!pick"
+				},
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "Creates an object composed of the picked `object` properties.",
+						"examples": [
+							"P.pick({ a: 1, b: 2, c: 3, d: 4 }, ['a', 'd']) // => { a: 1, d: 4 }",
+							"P.pipe({ a: 1, b: 2, c: 3, d: 4 }, R.pick(['a', 'd'])) // => { a: 1, d: 4 }"
+						],
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the target object",
+									"name": "object"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "the properties names",
+									"name": "names"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"R.pick(object",
+									"[prop1",
+									"prop2])"
+								]
+							},
+							{
+								"tag": "@data_first",
+								"content": []
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Object"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function pick<T extends "
+						},
+						{
+							"kind": "Content",
+							"text": "{}"
+						},
+						{
+							"kind": "Content",
+							"text": ", Q extends "
+						},
+						{
+							"kind": "Content",
+							"text": "string"
+						},
+						{
+							"kind": "Content",
+							"text": ">(names: "
+						},
+						{
+							"kind": "Content",
+							"text": "readonly Q[]"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "(object: T) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "IsPickKey",
+							"canonicalReference": "ts-prime!~IsPickKey:type"
+						},
+						{
+							"kind": "Content",
+							"text": "<T, Q> extends 'ON' ? {\n    [k in Q]: T[k];\n} : {\n    [k in keyof T]?: T[k];\n}"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!pick:function(3)",
+					"canonicalReferenceGroup": "ts-prime!pick"
+				}
+			],
+			"kind": "Function",
+			"name": "pick",
+			"canonicalReference": "ts-prime!pick:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!pick",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Object"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
 						"description": "Perform left-to-right function composition.",
 						"examples": [
 							"P.pipe(\n[1, 2, 3, 4],\nP.map(x => x * 2),\narr => [arr[0] + arr[1], arr[2] + arr[3]],\n) // => [6, 14]"
@@ -11270,7 +11572,22 @@
 					"comment": {
 						"description": "",
 						"examples": [],
-						"parsed": []
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "",
+									"name": "date"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "{optional} time diff",
+									"name": "from"
+								}
+							}
+						]
 					},
 					"excerptTokens": [
 						{
@@ -11673,6 +11990,161 @@
 					"value": "Pipe"
 				}
 			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Function",
+					"comment": {
+						"description": "Rate limiter function middleware",
+						"examples": [
+							"const requestToEndpoint = async (endpoint: \"A\" | \"B\" | \"C\" | \"D\", data: any) => { ...  }\nconst rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 })\n// Only two request are fired to endpoint A\nconst endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=>{\nreturn rate(obj.endpoint, obj.data)\n}))"
+						],
+						"parsed": [
+							{
+								"tag": "@param",
+								"content": {
+									"description": "logic when to retry",
+									"name": "errorHandler"
+								}
+							},
+							{
+								"tag": "@param",
+								"content": {
+									"description": "request function",
+									"name": "request"
+								}
+							},
+							{
+								"tag": "@signature",
+								"content": [
+									"P.rateLimiter(fn",
+									"options)"
+								]
+							},
+							{
+								"tag": "@category",
+								"content": [
+									"Utility",
+									"Promise"
+								]
+							}
+						]
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare function rateLimiter<F extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: unknown[]) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<unknown>"
+						},
+						{
+							"kind": "Content",
+							"text": ">(request: "
+						},
+						{
+							"kind": "Content",
+							"text": "F"
+						},
+						{
+							"kind": "Content",
+							"text": ", options: "
+						},
+						{
+							"kind": "Reference",
+							"text": "RateLimiterOptions",
+							"canonicalReference": "ts-prime!RateLimiterOptions:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<F>"
+						},
+						{
+							"kind": "Content",
+							"text": "): "
+						},
+						{
+							"kind": "Content",
+							"text": "F"
+						},
+						{
+							"kind": "Content",
+							"text": ";"
+						}
+					],
+					"canonicalReference": "ts-prime!rateLimiter:function(1)",
+					"canonicalReferenceGroup": "ts-prime!rateLimiter"
+				}
+			],
+			"kind": "Function",
+			"name": "rateLimiter",
+			"canonicalReference": "ts-prime!rateLimiter:function(1)",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!rateLimiter",
+			"tags": [
+				{
+					"tag": "@category",
+					"value": "Utility"
+				},
+				{
+					"tag": "@category",
+					"value": "Promise"
+				}
+			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Interface",
+					"comment": {
+						"description": "",
+						"examples": [],
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export interface RateLimiterOptions<F extends "
+						},
+						{
+							"kind": "Content",
+							"text": "(...args: unknown[]) => "
+						},
+						{
+							"kind": "Reference",
+							"text": "Promise",
+							"canonicalReference": "!Promise:interface"
+						},
+						{
+							"kind": "Content",
+							"text": "<unknown>"
+						},
+						{
+							"kind": "Content",
+							"text": "> "
+						}
+					],
+					"canonicalReference": "ts-prime!RateLimiterOptions:interface",
+					"canonicalReferenceGroup": "ts-prime!RateLimiterOptions"
+				}
+			],
+			"kind": "Interface",
+			"name": "RateLimiterOptions",
+			"canonicalReference": "ts-prime!RateLimiterOptions:interface",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!RateLimiterOptions",
+			"tags": []
 		},
 		{
 			"members": [
@@ -13646,6 +14118,32 @@
 					"value": "Function"
 				}
 			]
+		},
+		{
+			"members": [
+				{
+					"kind": "Namespace",
+					"comment": {
+						"description": "",
+						"examples": [],
+						"parsed": []
+					},
+					"excerptTokens": [
+						{
+							"kind": "Content",
+							"text": "export declare namespace Time "
+						}
+					],
+					"canonicalReference": "ts-prime!Time:namespace",
+					"canonicalReferenceGroup": "ts-prime!Time"
+				}
+			],
+			"kind": "Namespace",
+			"name": "Time",
+			"canonicalReference": "ts-prime!Time:namespace",
+			"package": "ts-prime",
+			"canonicalReferenceGroup": "ts-prime!Time",
+			"tags": []
 		},
 		{
 			"members": [

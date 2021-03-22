@@ -8,21 +8,21 @@ export interface RateLimiterOptions<F extends (...args: unknown[]) => Promise<un
 }
 
 /**
- * Rate limiter function middleware
+ * Controls how many concurrent execution can be invoked. At any given time
  * @param errorHandler logic when to retry
  * @param request request function
  * @signature
- *    P.rateLimiter(fn, options)
+ *    P.concurrent(fn, options)
  * @example
  *    const requestToEndpoint = async (endpoint: "A" | "B" | "C" | "D", data: any) => { ...  } 
- *    const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 })
+ *    const rate = P.concurrent(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 })
  *    // Only two request are fired to endpoint A
  *    const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=>{ 
  *      return rate(obj.endpoint, obj.data)
  *    }))
  * @category Utility, Promise
  */
-export function rateLimiter<F extends (...args: unknown[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F {
+export function concurrent<F extends (...args: unknown[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F {
     const requestCount: Record<string, number> = {}
     const stats = {
         totalRequests: 0

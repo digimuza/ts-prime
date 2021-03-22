@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for flatMapRecord.ts</title>
+    <title>Code coverage report for rateLimiter.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,35 +16,35 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">All files</a> flatMapRecord.ts
+      <a href="index.html">All files</a> rateLimiter.ts
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">9.09% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>2/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">10.53% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>2/19</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -100,157 +100,115 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">6x</span>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Pred } from './_types';
-import { purry } from './purry';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ArgsType } from "./cache"
+import { delay } from "./delay"
 &nbsp;
-/**
- * Loops each record element and flatMaps against provided function.
- * @param record The target object.
- * @param fn Mapping function.
- * @returns The new record.
- * @signature
- *    P.flatMapRecord(record, fn)
- * @example
- *    P.flatMapRecord({ a: 1, b: 2, c: 3 }, ([k,v]) =&gt; [[k, v * 2], [k + "_abc", v * 2]]) // =&gt; { a: 2, a_abc: 2, b: 4, b_abc: 4, c: 6, c_abc: 6 }
- * @data_first
- * @pipeable
- * @category Object
- */
-export function flatMapRecord&lt;
-  T extends Record&lt;string, unknown&gt;,
-  K extends string,
-  V
-&gt;(
-  record: T,
-  fn: Pred&lt;[keyof T, T[keyof T]], ReadonlyArray&lt;[K, V]&gt;&gt;
-): Record&lt;K, V&gt;;
-&nbsp;
-/**
- * Loops each record element and flatMaps against provided function.
- * @param record The target object.
- * @param fn Mapping function.
- * @returns The new record.
- * @signature
- *    P.pipe(record, P.flatMapRecord(fn))
- * @example
- *    P.pipe(({ a: 1, b: 2, c: 3 }, P.flatMapRecord(([k,v]) =&gt; [[k, v * 2], [k + "_abc", v * 2]])) // =&gt; { a: 2, a_abc: 2, b: 4, b_abc: 4, c: 6, c_abc: 6 }
- * @data_last
- * @pipeable
- * @category Object
- */
-export function flatMapRecord&lt;
-  T extends Record&lt;string, unknown&gt;,
-  K extends string,
-  V extends unknown
-&gt;(
-  fn: (v: [keyof T, T[keyof T]]) =&gt; ReadonlyArray&lt;[K, V]&gt;
-): (record: T) =&gt; Record&lt;K, V&gt;;
-export function flatMapRecord() {
-  return purry(_flatMapRecord(), arguments);
+export interface RateLimiterOptions&lt;F extends (...args: unknown[]) =&gt; Promise&lt;unknown&gt;&gt; {
+    rateLimitId: (...args: ArgsType&lt;F&gt;) =&gt; string
+    concurrentRequests?: ((rateLimitId: string) =&gt; number) | number
+    maxTotalRequests?: number
 }
 &nbsp;
-const _flatMapRecord = () =&gt; &lt;
-  T extends { [k: string]: any },
-  K extends string,
-  V
-&gt;(
-  rec: T,
-  fn: (v: [keyof T, T[keyof T]]) =&gt; ReadonlyArray&lt;[K, V]&gt;
-) =&gt; {
-  return Object.entries(rec)
-    .map(([k, v]) =&gt; {
-      return fn([k as keyof T, (v as unknown) as T[keyof T]]);
-    })
-    .reduce((acc, w) =&gt; {
-      for (const [k, v] of w) {
-        acc[k] = v;
-      }
-      return acc;
-    }, {} as Record&lt;K, V&gt;);
-};
-&nbsp;</pre></td></tr>
+/**
+ * Rate limiter function middleware
+ * @param errorHandler logic when to retry
+ * @param request request function
+ * @signature
+ *    P.rateLimiter(fn, options)
+ * @example
+ *    const requestToEndpoint = async (endpoint: "A" | "B" | "C" | "D", data: any) =&gt; { ...  } 
+ *    const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) =&gt; endpoint, concurrentRequests: 2 })
+ *    // Only two request are fired to endpoint A
+ *    const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=&gt;{ 
+ *      return rate(obj.endpoint, obj.data)
+ *    }))
+ * @category Utility, Promise
+ */
+<span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >rateLimiter&lt;</span>F extends (...args: unknown[]) =&gt; Promise&lt;unknown&gt;&gt;(request: F, options: RateLimiterOptions&lt;F&gt;): F {</span>
+    const requestCount: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{}</span>
+    const stats = <span class="cstat-no" title="statement not covered" >{</span>
+        totalRequests: 0
+    }
+&nbsp;
+    const requestMiddleware = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >...args</span>)</span> =&gt; {</span></span>
+        while (stats.totalRequests &gt;= 50<span class="cstat-no" title="statement not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >            await delay(0)</span>
+        }
+        const <span class="cstat-no" title="statement not covered" >namespace = options.rateLimitId(...args as ArgsType&lt;F&gt;)</span>
+<span class="cstat-no" title="statement not covered" >        if (requestCount[namespace] == null) {</span>
+<span class="cstat-no" title="statement not covered" >            requestCount[namespace] = 0</span>
+        }
+&nbsp;
+        const <span class="cstat-no" title="statement not covered" >maxRequests = typeof options.concurrentRequests === 'function' ? options.concurrentRequests(namespace) : options.concurrentRequests ?? 3</span>
+        while (requestCount[namespace] &gt;= maxRequests<span class="cstat-no" title="statement not covered" >) {</span>
+<span class="cstat-no" title="statement not covered" >            await delay(0)</span>
+        }
+<span class="cstat-no" title="statement not covered" >        requestCount[namespace] += 1</span>
+<span class="cstat-no" title="statement not covered" >        stats.totalRequests += 1</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return request(...args).finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >            requestCount[namespace] -= 1</span>
+<span class="cstat-no" title="statement not covered" >            stats.totalRequests -= 1</span>
+        })
+    }) as F
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return requestMiddleware</span>
+}</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
