@@ -1800,29 +1800,6 @@ export declare function range(start: number, end: number): number[];
 export declare function range(end: number): (start: number) => number[];
 
 /**
- * Rate limiter function middleware
- * @param errorHandler logic when to retry
- * @param request request function
- * @signature
- *    P.rateLimiter(fn, options)
- * @example
- *    const requestToEndpoint = async (endpoint: "A" | "B" | "C" | "D", data: any) => { ...  }
- *    const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) => endpoint, concurrentRequests: 2 })
- *    // Only two request are fired to endpoint A
- *    const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=>{
- *      return rate(obj.endpoint, obj.data)
- *    }))
- * @category Utility, Promise
- */
-export declare function rateLimiter<F extends (...args: unknown[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F;
-
-export declare interface RateLimiterOptions<F extends (...args: unknown[]) => Promise<unknown>> {
-    rateLimitId: (...args: ArgsType<F>) => string;
-    concurrentRequests?: ((rateLimitId: string) => number) | number;
-    maxTotalRequests?: number;
-}
-
-/**
  * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
  * @param array the array to reduce
  * @param fn the callback function

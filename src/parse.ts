@@ -89,7 +89,7 @@ export function toInt(data: unknown, defaultValue?: number): any {
   }
 
   if (isNumber(defaultValue)) {
-    return defaultValue;
+    return toInt(defaultValue);
   }
   return;
 }

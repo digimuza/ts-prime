@@ -22,14 +22,14 @@ export interface RateLimiterOptions<F extends (...args: unknown[]) => Promise<un
  *    }))
  * @category Utility, Promise
  */
-export function concurrent<F extends (...args: unknown[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F {
+export function concurrent<F extends (...args: any[]) => Promise<unknown>>(request: F, options: RateLimiterOptions<F>): F {
     const requestCount: Record<string, number> = {}
     const stats = {
         totalRequests: 0
     }
 
     const requestMiddleware = (async (...args) => {
-        while (stats.totalRequests >= 50) {
+        while (stats.totalRequests >= (options.maxTotalRequests || 50)) {
             await delay(0)
         }
         const namespace = options.rateLimitId(...args as ArgsType<F>)

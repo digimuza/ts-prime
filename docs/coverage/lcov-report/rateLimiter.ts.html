@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">9.09% </span>
+        <span class="strong">95.45% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/22</span>
+        <span class='fraction'>21/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">70% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>7/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/3</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">10.53% </span>
+        <span class="strong">94.74% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/19</span>
+        <span class='fraction'>18/19</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,7 +101,7 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -124,36 +124,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">280344x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
+<span class="cline-any cline-yes">800x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ArgsType } from "./cache"
 import { delay } from "./delay"
 &nbsp;
@@ -164,57 +164,57 @@ export interface RateLimiterOptions&lt;F extends (...args: unknown[]) =&gt; Prom
 }
 &nbsp;
 /**
- * Rate limiter function middleware
+ * Controls how many concurrent execution can be invoked. At any given time
  * @param errorHandler logic when to retry
  * @param request request function
  * @signature
- *    P.rateLimiter(fn, options)
+ *    P.concurrent(fn, options)
  * @example
  *    const requestToEndpoint = async (endpoint: "A" | "B" | "C" | "D", data: any) =&gt; { ...  } 
- *    const rate = P.rateLimiter(requestToEndpoint, ({ rateLimitId: (endpoint) =&gt; endpoint, concurrentRequests: 2 })
+ *    const rate = P.concurrent(requestToEndpoint, ({ rateLimitId: (endpoint) =&gt; endpoint, concurrentRequests: 2 })
  *    // Only two request are fired to endpoint A
  *    const endpoints = await Promise.all([{ endpoint: A, data: any }, ...].map(async (obj)=&gt;{ 
  *      return rate(obj.endpoint, obj.data)
  *    }))
  * @category Utility, Promise
  */
-<span class="cstat-no" title="statement not covered" >export function <span class="fstat-no" title="function not covered" >rateLimiter&lt;</span>F extends (...args: unknown[]) =&gt; Promise&lt;unknown&gt;&gt;(request: F, options: RateLimiterOptions&lt;F&gt;): F {</span>
-    const requestCount: Record&lt;string, number&gt; = <span class="cstat-no" title="statement not covered" >{}</span>
-    const stats = <span class="cstat-no" title="statement not covered" >{</span>
+export function concurrent&lt;F extends (...args: any[]) =&gt; Promise&lt;unknown&gt;&gt;(request: F, options: RateLimiterOptions&lt;F&gt;): F {
+    const requestCount: Record&lt;string, number&gt; = {}
+    const stats = {
         totalRequests: 0
     }
 &nbsp;
-    const requestMiddleware = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >...args</span>)</span> =&gt; {</span></span>
-        while (stats.totalRequests &gt;= 50<span class="cstat-no" title="statement not covered" >) {</span>
-<span class="cstat-no" title="statement not covered" >            await delay(0)</span>
+    const requestMiddleware = (async (...args) =&gt; {
+        while (stats.totalRequests &gt;= (options.maxTotalRequests || <span class="branch-1 cbranch-no" title="branch not covered" >50)</span>) {
+            await delay(0)
         }
-        const <span class="cstat-no" title="statement not covered" >namespace = options.rateLimitId(...args as ArgsType&lt;F&gt;)</span>
-<span class="cstat-no" title="statement not covered" >        if (requestCount[namespace] == null) {</span>
-<span class="cstat-no" title="statement not covered" >            requestCount[namespace] = 0</span>
+        const namespace = options.rateLimitId(...args as ArgsType&lt;F&gt;)
+        if (requestCount[namespace] == null) {
+            requestCount[namespace] = 0
         }
 &nbsp;
-        const <span class="cstat-no" title="statement not covered" >maxRequests = typeof options.concurrentRequests === 'function' ? options.concurrentRequests(namespace) : options.concurrentRequests ?? 3</span>
-        while (requestCount[namespace] &gt;= maxRequests<span class="cstat-no" title="statement not covered" >) {</span>
+        const maxRequests = typeof options.concurrentRequests === 'function' ? <span class="branch-0 cbranch-no" title="branch not covered" >options.concurrentRequests(namespace) </span>: options.concurrentRequests ?? <span class="branch-1 cbranch-no" title="branch not covered" >3</span>
+        while (requestCount[namespace] &gt;= maxRequests) {
 <span class="cstat-no" title="statement not covered" >            await delay(0)</span>
         }
-<span class="cstat-no" title="statement not covered" >        requestCount[namespace] += 1</span>
-<span class="cstat-no" title="statement not covered" >        stats.totalRequests += 1</span>
+        requestCount[namespace] += 1
+        stats.totalRequests += 1
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        return request(...args).finally(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
-<span class="cstat-no" title="statement not covered" >            requestCount[namespace] -= 1</span>
-<span class="cstat-no" title="statement not covered" >            stats.totalRequests -= 1</span>
+        return request(...args).finally(() =&gt; {
+            requestCount[namespace] -= 1
+            stats.totalRequests -= 1
         })
     }) as F
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return requestMiddleware</span>
+    return requestMiddleware
 }</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Mar 19 2021 13:48:53 GMT+0200 (Eastern European Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Jun 13 2021 14:46:45 GMT+0300 (Eastern European Summer Time)
 </div>
 </div>
 <script src="prettify.js"></script>
