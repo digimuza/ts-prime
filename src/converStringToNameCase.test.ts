@@ -4,10 +4,19 @@ test('CamelCaseToSnakeCase', () => {
   expect(convertStringToNameCase('Test Is Test', 'PascalCase')).toEqual(
     'TestIsTest'
   );
+  expect(convertStringToNameCase('testIsTest', 'PascalCase')).toEqual(
+    'TestIsTest'
+  );
+  expect(convertStringToNameCase('test-IsTest', 'PascalCase')).toEqual(
+    'TestIsTest'
+  );
   expect(convertStringToNameCase('Test Is Test', 'Train-Case')).toEqual(
     'Test-Is-Test'
   );
-  expect(convertStringToNameCase('Test Is Test', 'camelCase')).toEqual(
+  expect(convertStringToNameCase('Test-Is@Test', 'Train-Case')).toEqual(
+    'Test-Is-Test'
+  );
+  expect(convertStringToNameCase('testIs Test', 'camelCase')).toEqual(
     'testIsTest'
   );
   expect(convertStringToNameCase('Test Is Test', 'kebab-case')).toEqual(

@@ -24,7 +24,7 @@ export function convertStringToNameCase(
 ): string {
   const result = pipe(
     str.split(' '),
-    flatMap(q => q.split('-')),
+    flatMap(q => q.split(/(?=[A-Z])| |-/)),
     map(w => normalizeString(w)),
     filter(q => !!q)
   );
