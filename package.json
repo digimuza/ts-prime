@@ -1,6 +1,6 @@
 {
   "name": "ts-prime",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A utility library for JavaScript and Typescript.",
   "main": "dist/commonjs/index.js",
   "module": "dist/es/index.js",
